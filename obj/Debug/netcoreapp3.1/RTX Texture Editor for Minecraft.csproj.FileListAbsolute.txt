@@ -1,0 +1,17 @@
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.exe
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.deps.json
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.runtimeconfig.json
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.runtimeconfig.dev.json
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.pdb
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.csproj.AssemblyReference.cache
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX_Texture_Editor_for_Minecraft.Form1.resources
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.csproj.GenerateResource.cache
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.AssemblyInfoInputs.cache
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.AssemblyInfo.cs
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.pdb
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.genruntimeconfig.cache
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX_Texture_Editor_for_Minecraft.Properties.Resources.resources
