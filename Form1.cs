@@ -81,6 +81,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         Image file;
         Boolean opened = false;
+        int[,] pixel;
         void openImage()
         {
             DialogResult dr = openFileDialog1.ShowDialog();
@@ -100,8 +101,7 @@ namespace RTX_Texture_Editor_for_Minecraft
                 limit = 32;
                 pixelX = x;
                 pixelY = y;
-                int[,] pixel = new int[pixelX, pixelY];
-                
+                pixel = new int[pixelX, pixelY];
             }
         }
         void saveImage()
@@ -164,10 +164,13 @@ namespace RTX_Texture_Editor_for_Minecraft
                 cursorY = e.Y;
                 int xAxis = (int)(cursorX * zoom*(float)Math.Pow(2,5-factor) / (float)(bm.Width*Math.Pow(2,factor-1)));
                 int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) / (float)(bm.Height * Math.Pow(2, factor - 1)));
-                label1.Text = xAxis.ToString("f");
-                label2.Text = factor.ToString("d");
                 Point touch = new Point(xAxis*zoom, yAxis*zoom);
                 graphics.FillRectangle(Brushes.Black, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
+                label1.Text = pictureBox1.Width.ToString("d");
+                if (xAxis <= (pictureBox1.Width/zoom)-1 && yAxis <= (pictureBox1.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0)
+                {
+                    pixel[xAxis, yAxis] = 1;
+                }
             }
         }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -180,6 +183,11 @@ namespace RTX_Texture_Editor_for_Minecraft
                 int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) / (float)(bm.Height * Math.Pow(2, factor - 1)));
                 Point touch = new Point(xAxis * zoom, yAxis * zoom);
                 graphics.FillRectangle(Brushes.Black, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
+                label1.Text = pictureBox1.Width.ToString("d");
+                if (xAxis <= (pictureBox1.Width / zoom) - 1 && yAxis <= (pictureBox1.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) 
+                {
+                    pixel[xAxis, yAxis] = 1;
+                }
             }
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -195,15 +203,24 @@ namespace RTX_Texture_Editor_for_Minecraft
                 e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
                 e.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
                 e.Graphics.DrawImage(bm, 0, 0, pictureBox1.Width, pictureBox1.Height);
-                cursorPen = new Pen(Color.Black, file.Width * zoom/bm.Width);
-                cursorPen.StartCap = LineCap.Square;
-                cursorPen.EndCap = LineCap.Square;
+                for (int i = 0; i < pixel.GetLength(0); i++)
+                {
+                    for (int j = 0; j < pixel.GetLength(1); j++)
+                    {
+                        if (pixel[i, j] == 1)
+                        {
+                            int xAxis = i;
+                            int yAxis = j;
+                            Point touch = new Point(xAxis * zoom, yAxis * zoom);
+                            e.Graphics.FillRectangle(Brushes.Black, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
+                        }
+                    }
+                }
                 graphics = pictureBox1.CreateGraphics();
             }
         }
         Graphics graphics;
         Boolean cursorMoving = false;
-        Pen cursorPen;
         int cursorX = -1;
         int cursorY = -1;
     }
