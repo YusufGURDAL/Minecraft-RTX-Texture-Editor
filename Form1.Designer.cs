@@ -31,6 +31,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Slider = new System.Windows.Forms.PictureBox();
             this.fileOpen = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -38,19 +39,28 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelCanvas = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metalnessTrackBar = new System.Windows.Forms.TrackBar();
+            this.emissiveTrackBar = new System.Windows.Forms.TrackBar();
+            this.roughnessTrackBar = new System.Windows.Forms.TrackBar();
+            this.mVal = new System.Windows.Forms.Label();
+            this.eVal = new System.Windows.Forms.Label();
+            this.rVal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).BeginInit();
             this.panelCanvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metalnessTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emissiveTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roughnessTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // Slider
             // 
+            resources.ApplyResources(this.Slider, "Slider");
             this.Slider.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Slider.Location = new System.Drawing.Point(787, 43);
             this.Slider.Name = "Slider";
-            this.Slider.Size = new System.Drawing.Size(30, 450);
-            this.Slider.TabIndex = 0;
             this.Slider.TabStop = false;
             this.Slider.Paint += new System.Windows.Forms.PaintEventHandler(this.Slider_Paint);
             this.Slider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Slider_MouseDown);
@@ -59,76 +69,128 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // fileOpen
             // 
-            this.fileOpen.Location = new System.Drawing.Point(13, 619);
+            resources.ApplyResources(this.fileOpen, "fileOpen");
+            this.fileOpen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fileOpen.Name = "fileOpen";
-            this.fileOpen.Size = new System.Drawing.Size(209, 40);
-            this.fileOpen.TabIndex = 2;
-            this.fileOpen.Text = "Dosya aç";
             this.fileOpen.UseVisualStyleBackColor = true;
             this.fileOpen.Click += new System.EventHandler(this.fileOpen_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // saveFile
             // 
-            this.saveFile.Location = new System.Drawing.Point(229, 619);
+            resources.ApplyResources(this.saveFile, "saveFile");
+            this.saveFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveFile.Name = "saveFile";
-            this.saveFile.Size = new System.Drawing.Size(186, 40);
-            this.saveFile.TabIndex = 3;
-            this.saveFile.Text = "Kaydet";
             this.saveFile.UseVisualStyleBackColor = true;
             this.saveFile.Click += new System.EventHandler(this.saveFile_Click);
             // 
+            // saveFileDialog1
+            // 
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
+            // 
             // panelCanvas
             // 
+            resources.ApplyResources(this.panelCanvas, "panelCanvas");
             this.panelCanvas.BackColor = System.Drawing.Color.DimGray;
             this.panelCanvas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelCanvas.Controls.Add(this.pictureBox1);
-            this.panelCanvas.Location = new System.Drawing.Point(12, 12);
+            this.panelCanvas.Cursor = System.Windows.Forms.Cursors.Cross;
             this.panelCanvas.Name = "panelCanvas";
-            this.panelCanvas.Size = new System.Drawing.Size(600, 600);
-            this.panelCanvas.TabIndex = 4;
             // 
             // pictureBox1
             // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(200, 200);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
+            // metalnessTrackBar
+            // 
+            resources.ApplyResources(this.metalnessTrackBar, "metalnessTrackBar");
+            this.metalnessTrackBar.LargeChange = 1;
+            this.metalnessTrackBar.Maximum = 255;
+            this.metalnessTrackBar.Name = "metalnessTrackBar";
+            this.metalnessTrackBar.Scroll += new System.EventHandler(this.metalnessTrackBar_Scroll);
+            // 
+            // emissiveTrackBar
+            // 
+            resources.ApplyResources(this.emissiveTrackBar, "emissiveTrackBar");
+            this.emissiveTrackBar.LargeChange = 1;
+            this.emissiveTrackBar.Maximum = 255;
+            this.emissiveTrackBar.Name = "emissiveTrackBar";
+            this.emissiveTrackBar.Scroll += new System.EventHandler(this.emissiveTrackBar_Scroll);
+            // 
+            // roughnessTrackBar
+            // 
+            resources.ApplyResources(this.roughnessTrackBar, "roughnessTrackBar");
+            this.roughnessTrackBar.LargeChange = 1;
+            this.roughnessTrackBar.Maximum = 255;
+            this.roughnessTrackBar.Name = "roughnessTrackBar";
+            this.roughnessTrackBar.Scroll += new System.EventHandler(this.roughnessTrackBar_Scroll);
+            // 
+            // mVal
+            // 
+            resources.ApplyResources(this.mVal, "mVal");
+            this.mVal.Name = "mVal";
+            // 
+            // eVal
+            // 
+            resources.ApplyResources(this.eVal, "eVal");
+            this.eVal.Name = "eVal";
+            // 
+            // rVal
+            // 
+            resources.ApplyResources(this.rVal, "rVal");
+            this.rVal.Name = "rVal";
+            // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(743, 539);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 749);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.rVal);
+            this.Controls.Add(this.eVal);
+            this.Controls.Add(this.mVal);
+            this.Controls.Add(this.roughnessTrackBar);
+            this.Controls.Add(this.emissiveTrackBar);
+            this.Controls.Add(this.metalnessTrackBar);
             this.Controls.Add(this.panelCanvas);
             this.Controls.Add(this.saveFile);
             this.Controls.Add(this.fileOpen);
             this.Controls.Add(this.Slider);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).EndInit();
             this.panelCanvas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metalnessTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emissiveTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roughnessTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,7 +212,15 @@ namespace RTX_Texture_Editor_for_Minecraft
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Panel panelCanvas;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TrackBar metalnessTrackBar;
+        private System.Windows.Forms.TrackBar emissiveTrackBar;
+        private System.Windows.Forms.TrackBar roughnessTrackBar;
+        private System.Windows.Forms.Label mVal;
+        private System.Windows.Forms.Label eVal;
+        private System.Windows.Forms.Label rVal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

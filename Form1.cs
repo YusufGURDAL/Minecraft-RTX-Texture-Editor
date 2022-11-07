@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.IO;
 
 namespace RTX_Texture_Editor_for_Minecraft
 {
@@ -82,11 +83,13 @@ namespace RTX_Texture_Editor_for_Minecraft
         Image file;
         Boolean opened = false;
         int[,] pixel;
+        string filePath="";
         void openImage()
         {
             DialogResult dr = openFileDialog1.ShowDialog();
             if (dr == DialogResult.OK)
             {
+                filePath = openFileDialog1.FileName;
                 file = Image.FromFile(openFileDialog1.FileName);
                 opened = true;
                 pictureBox1.Image = file;
@@ -95,7 +98,7 @@ namespace RTX_Texture_Editor_for_Minecraft
                 x = pictureBox1.Width;
                 y = pictureBox1.Height;
                 pictureBox1.Location = new Point((panelCanvas.Width - x) / 2, (panelCanvas.Height - y) / 2);
-                bm = new Bitmap(file);
+                bm = new Bitmap(pictureBox1.Image);
                 bm_size = bm.Size;
                 zoom = 1;
                 limit = 32;
@@ -108,9 +111,17 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             if (opened)
             {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "Images|*.png";
-                ImageFormat format = ImageFormat.Png;
+                zoom = 1;
+                pictureBox1.Size = new Size(zoom * x, zoom * y);
+                pictureBox1.Location = new Point((panelCanvas.Size.Width - pictureBox1.Width) / 2, (panelCanvas.Size.Height - pictureBox1.Height) / 2);
+                pictureBox1.Invalidate();
+                string fileName = Path.GetFileName(filePath);
+                fileName = fileName.Substring(0, fileName.Length - 4);
+                using (var bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height))
+                {
+                    pictureBox1.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+                    bitmap.Save(@$"C:\Users\yusuf\Desktop\{fileName}_mer.png");
+                }
             }
             else { MessageBox.Show("No image loaded, first upload image "); }
         }
@@ -130,6 +141,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         Bitmap bm;
         Size bm_size;
         int zoom, limit, x, y, factor = 1;
+        int M, E, R;
         private void PanelCanvas_MouseWheel(object sender, MouseEventArgs e)
         {
             if (bm != null)
@@ -149,24 +161,40 @@ namespace RTX_Texture_Editor_for_Minecraft
                     zoom = zoom / 2;
                     factor--;
                 }
-                pictureBox1.BorderStyle = BorderStyle.None;
                 pictureBox1.Size = new Size(zoom * x, zoom * y);
                 pictureBox1.Location = new Point((panelCanvas.Size.Width - pictureBox1.Width) / 2, (panelCanvas.Size.Height - pictureBox1.Height) / 2);
                 pictureBox1.Invalidate();
             }
         }
+        private void metalnessTrackBar_Scroll(object sender, EventArgs e)
+        {
+            M = metalnessTrackBar.Value;
+            mVal.Text = M.ToString("d");
+        }
+        private void emissiveTrackBar_Scroll(object sender, EventArgs e)
+        {
+            E = emissiveTrackBar.Value;
+            eVal.Text = E.ToString("d");
+        }
+        private void roughnessTrackBar_Scroll(object sender, EventArgs e)
+        {
+            R = roughnessTrackBar.Value;
+            rVal.Text = R.ToString("d");
+        }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if ( opened)
             {
+                Color color = Color.FromArgb(M, E, R);
+                SolidBrush myBrush = new SolidBrush(color);
+                myBrush.Color = Color.FromArgb(255, color);
                 cursorMoving = true;
                 cursorX = e.X;
                 cursorY = e.Y;
                 int xAxis = (int)(cursorX * zoom*(float)Math.Pow(2,5-factor) / (float)(bm.Width*Math.Pow(2,factor-1)));
                 int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) / (float)(bm.Height * Math.Pow(2, factor - 1)));
                 Point touch = new Point(xAxis*zoom, yAxis*zoom);
-                graphics.FillRectangle(Brushes.Black, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
-                label1.Text = pictureBox1.Width.ToString("d");
+                graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
                 if (xAxis <= (pictureBox1.Width/zoom)-1 && yAxis <= (pictureBox1.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0)
                 {
                     pixel[xAxis, yAxis] = 1;
@@ -177,13 +205,15 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             if (cursorX != -1 && cursorY != -1 && cursorMoving && opened) 
             {
+                Color color = Color.FromArgb(M, E, R);
+                SolidBrush myBrush = new SolidBrush(color);
+                myBrush.Color = Color.FromArgb(255, color);
                 cursorX = e.X;
                 cursorY = e.Y;
                 int xAxis = (int)(cursorX * zoom * (float)Math.Pow(2, 5 - factor) / (float)(bm.Width * Math.Pow(2, factor - 1)));
                 int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) / (float)(bm.Height * Math.Pow(2, factor - 1)));
                 Point touch = new Point(xAxis * zoom, yAxis * zoom);
-                graphics.FillRectangle(Brushes.Black, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
-                label1.Text = pictureBox1.Width.ToString("d");
+                graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
                 if (xAxis <= (pictureBox1.Width / zoom) - 1 && yAxis <= (pictureBox1.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) 
                 {
                     pixel[xAxis, yAxis] = 1;
@@ -212,7 +242,10 @@ namespace RTX_Texture_Editor_for_Minecraft
                             int xAxis = i;
                             int yAxis = j;
                             Point touch = new Point(xAxis * zoom, yAxis * zoom);
-                            e.Graphics.FillRectangle(Brushes.Black, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
+                            Color color = Color.FromArgb(M, E, R);
+                            SolidBrush myBrush = new SolidBrush(color);
+                            myBrush.Color = Color.FromArgb(255, color);
+                            e.Graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
                         }
                     }
                 }

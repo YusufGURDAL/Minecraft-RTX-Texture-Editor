@@ -15,3 +15,6 @@ C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor 
 C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.pdb
 C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX Texture Editor for Minecraft.genruntimeconfig.cache
 C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX_Texture_Editor_for_Minecraft.Properties.Resources.resources
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\netcoreapp3.1\tr-TR\RTX Texture Editor for Minecraft.resources.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\RTX_Texture_Editor_for_Minecraft.Form1.tr-TR.resources
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\netcoreapp3.1\tr-TR\RTX Texture Editor for Minecraft.resources.dll
