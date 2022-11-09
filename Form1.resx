@@ -57,200 +57,317 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;rVal.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="metalnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 12</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="eVal.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="fileOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="rVal.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="metalnessTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="emissiveTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.Name" xml:space="preserve">
-    <value>panelCanvas</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;rVal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="eVal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="fileOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 40</value>
-  </data>
-  <data name="Slider.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 450</value>
-  </data>
-  <data name="&gt;&gt;metalnessTrackBar.Name" xml:space="preserve">
-    <value>metalnessTrackBar</value>
-  </data>
-  <data name="fileOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 618</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1010, 656</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 656</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>emissive</value>
-  </data>
-  <data name="Slider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1267, 190</value>
-  </data>
-  <data name="&gt;&gt;rVal.Name" xml:space="preserve">
-    <value>rVal</value>
-  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 25</value>
   </data>
-  <data name="&gt;&gt;fileOpen.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+  <data name="rVal.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="eVal.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;fileOpen.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>860, 656</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.Name" xml:space="preserve">
-    <value>emissiveTrackBar</value>
-  </data>
-  <data name="&gt;&gt;metalnessTrackBar.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="eVal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 25</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="&gt;&gt;Slider.Name" xml:space="preserve">
-    <value>Slider</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="mVal.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="saveFile.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="metalnessTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>rougness</value>
-  </data>
-  <data name="&gt;&gt;mVal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="emissiveTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 600</value>
-  </data>
-  <data name="&gt;&gt;eVal.Name" xml:space="preserve">
-    <value>eVal</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="emissiveTrackBar.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="metalnessTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.Name" xml:space="preserve">
-    <value>roughnessTrackBar</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="Slider.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;metalnessTrackBar.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;emissiveTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mVal.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 25</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>10, 25</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelCanvas.Name" xml:space="preserve">
     <value>panelCanvas</value>
   </data>
-  <data name="&gt;&gt;eVal.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
   </data>
-  <data name="panelCanvas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 600</value>
+  <data name="&gt;&gt;roughnessTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
-    <value>saveFile</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="mVal.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
+    <value>pictureBox4</value>
+  </data>
+  <data name="&gt;&gt;metalnessTrackBar.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;eVal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 615</value>
+  </data>
+  <data name="Slider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1267, 190</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="roughnessTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="Slider.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="saveFile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panelCanvas.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="roughnessTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 447</value>
+  </data>
+  <data name="&gt;&gt;roughnessTrackBar.Name" xml:space="preserve">
+    <value>roughnessTrackBar</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;emissiveTrackBar.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;emissiveTrackBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fileOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 618</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1140, 692</value>
+  </data>
+  <data name="&gt;&gt;roughnessTrackBar.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="mVal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panelCanvas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="pictureBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rVal.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="saveFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 40</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Slider.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="emissiveTrackBar.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;mVal.Name" xml:space="preserve">
+    <value>mVal</value>
+  </data>
+  <data name="emissiveTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
   </data>
   <data name="roughnessTrackBar.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="rVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1035, 615</value>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;panelCanvas.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;roughnessTrackBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1126, 696</value>
+  </data>
+  <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>970, 696</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="eVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>885, 615</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="&gt;&gt;eVal.Name" xml:space="preserve">
+    <value>eVal</value>
+  </data>
+  <data name="panelCanvas.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
+    <value>saveFile</value>
+  </data>
+  <data name="metalnessTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;emissiveTrackBar.Name" xml:space="preserve">
+    <value>emissiveTrackBar</value>
+  </data>
+  <data name="&gt;&gt;Slider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
+    <value>pictureBox3</value>
+  </data>
+  <data name="eVal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Slider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 450</value>
+  </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>820, 696</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="rVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 25</value>
+  </data>
+  <data name="&gt;&gt;saveFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>panelCanvas</value>
+  </data>
+  <data name="&gt;&gt;saveFile.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 25</value>
+  </data>
+  <data name="fileOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 40</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;eVal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
+    <value>saveFileDialog1</value>
+  </data>
+  <data name="eVal.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelCanvas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rVal.Name" xml:space="preserve">
+    <value>rVal</value>
+  </data>
+  <data name="mVal.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;Slider.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="roughnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1000, 12</value>
+  </data>
+  <data name="rVal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;mVal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="emissiveTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 600</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="metalnessTrackBar.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -258,206 +375,179 @@
   <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Slider.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="saveFile.Text" xml:space="preserve">
-    <value>Kaydet</value>
-  </data>
-  <data name="mVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 615</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="mVal.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="roughnessTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="&gt;&gt;eVal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="saveFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 618</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>metalness</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="panelCanvas.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="rVal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 25</value>
-  </data>
-  <data name="&gt;&gt;rVal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rVal.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="roughnessTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
-    <value>openFileDialog1</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1140, 692</value>
-  </data>
-  <data name="roughnessTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 600</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="emissiveTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="panelCanvas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="emissiveTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>850, 12</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="fileOpen.Text" xml:space="preserve">
-    <value>Dosya aç</value>
-  </data>
-  <data name="metalnessTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 600</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;mVal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="roughnessTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileOpen.Name" xml:space="preserve">
-    <value>fileOpen</value>
-  </data>
-  <data name="saveFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 40</value>
-  </data>
-  <data name="&gt;&gt;mVal.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;Slider.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Slider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveFile.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="emissiveTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="eVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>885, 615</value>
-  </data>
-  <data name="rVal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mVal.Name" xml:space="preserve">
-    <value>mVal</value>
-  </data>
-  <data name="&gt;&gt;eVal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="roughnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1000, 12</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
-    <value>saveFileDialog1</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 25</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 25</value>
   </data>
   <data name="&gt;&gt;metalnessTrackBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="mVal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;fileOpen.Name" xml:space="preserve">
+    <value>fileOpen</value>
   </data>
-  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>211, 17</value>
+  <data name="&gt;&gt;metalnessTrackBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rVal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>860, 656</value>
+  </data>
+  <data name="fileOpen.Text" xml:space="preserve">
+    <value>Dosya aç</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="saveFile.Text" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="eVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 25</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1010, 656</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>metalness</value>
+  </data>
+  <data name="&gt;&gt;Slider.Name" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="roughnessTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 25</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;metalnessTrackBar.Name" xml:space="preserve">
+    <value>metalnessTrackBar</value>
+  </data>
+  <data name="&gt;&gt;eVal.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="metalnessTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="&gt;&gt;mVal.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="saveFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 618</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>rougness</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 656</value>
+  </data>
+  <data name="roughnessTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 600</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>emissive</value>
+  </data>
+  <data name="&gt;&gt;fileOpen.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="emissiveTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>850, 12</value>
+  </data>
+  <data name="eVal.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="rVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1035, 615</value>
+  </data>
+  <data name="fileOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panelCanvas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 600</value>
+  </data>
+  <data name="metalnessTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 600</value>
+  </data>
+  <data name="&gt;&gt;mVal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rVal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>10, 25</value>
+  </data>
+  <data name="metalnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 12</value>
+  </data>
+  <data name="rVal.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="emissiveTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;fileOpen.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="metalnessTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="emissiveTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>tr-TR</value>
   </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

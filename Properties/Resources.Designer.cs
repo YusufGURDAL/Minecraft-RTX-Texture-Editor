@@ -59,5 +59,15 @@ namespace RTX_Texture_Editor_for_Minecraft.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap dye_powder_blue_new {
+            get {
+                object obj = ResourceManager.GetObject("dye_powder_blue_new", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
