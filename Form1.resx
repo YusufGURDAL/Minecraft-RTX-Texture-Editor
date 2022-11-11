@@ -57,499 +57,111 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 25</value>
-  </data>
-  <data name="rVal.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mVal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 25</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.Name" xml:space="preserve">
-    <value>panelCanvas</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="mVal.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
-    <value>pictureBox4</value>
-  </data>
-  <data name="&gt;&gt;metalnessTrackBar.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;eVal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 615</value>
-  </data>
-  <data name="Slider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1267, 190</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="roughnessTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="Slider.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="saveFile.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="roughnessTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>638, 447</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.Name" xml:space="preserve">
-    <value>roughnessTrackBar</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="fileOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 618</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1140, 692</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="mVal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="pictureBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rVal.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="saveFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 40</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Slider.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="emissiveTrackBar.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;mVal.Name" xml:space="preserve">
-    <value>mVal</value>
-  </data>
-  <data name="emissiveTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="roughnessTrackBar.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panelCanvas.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;roughnessTrackBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1126, 696</value>
-  </data>
-  <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>970, 696</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="eVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>885, 615</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 200</value>
-  </data>
-  <data name="&gt;&gt;eVal.Name" xml:space="preserve">
-    <value>eVal</value>
-  </data>
-  <data name="panelCanvas.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
-    <value>saveFile</value>
-  </data>
-  <data name="metalnessTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;emissiveTrackBar.Name" xml:space="preserve">
-    <value>emissiveTrackBar</value>
-  </data>
-  <data name="&gt;&gt;Slider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
-    <value>pictureBox3</value>
-  </data>
-  <data name="eVal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Slider.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 450</value>
-  </data>
-  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>820, 696</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="rVal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 25</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panelCanvas</value>
-  </data>
-  <data name="&gt;&gt;saveFile.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 25</value>
-  </data>
-  <data name="fileOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 40</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;eVal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
-    <value>saveFileDialog1</value>
-  </data>
-  <data name="eVal.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelCanvas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;rVal.Name" xml:space="preserve">
-    <value>rVal</value>
-  </data>
-  <data name="mVal.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="&gt;&gt;Slider.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="roughnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1000, 12</value>
-  </data>
-  <data name="rVal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;mVal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="emissiveTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 600</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="metalnessTrackBar.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;metalnessTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileOpen.Name" xml:space="preserve">
-    <value>fileOpen</value>
-  </data>
-  <data name="&gt;&gt;metalnessTrackBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;rVal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>860, 656</value>
-  </data>
-  <data name="fileOpen.Text" xml:space="preserve">
-    <value>Dosya aç</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="saveFile.Text" xml:space="preserve">
-    <value>Kaydet</value>
-  </data>
-  <data name="eVal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 25</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1010, 656</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>metalness</value>
-  </data>
-  <data name="&gt;&gt;Slider.Name" xml:space="preserve">
-    <value>Slider</value>
-  </data>
-  <data name="roughnessTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 25</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
-    <value>openFileDialog1</value>
-  </data>
-  <data name="&gt;&gt;metalnessTrackBar.Name" xml:space="preserve">
-    <value>metalnessTrackBar</value>
-  </data>
-  <data name="&gt;&gt;eVal.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="metalnessTrackBar.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="&gt;&gt;mVal.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="saveFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 618</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>rougness</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 656</value>
-  </data>
-  <data name="roughnessTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 600</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>emissive</value>
-  </data>
-  <data name="&gt;&gt;fileOpen.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="emissiveTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>850, 12</value>
-  </data>
-  <data name="eVal.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="rVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1035, 615</value>
-  </data>
-  <data name="fileOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="panelCanvas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 600</value>
-  </data>
-  <data name="metalnessTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 600</value>
-  </data>
-  <data name="&gt;&gt;mVal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rVal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>10, 25</value>
-  </data>
-  <data name="metalnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 12</value>
-  </data>
-  <data name="rVal.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="emissiveTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;fileOpen.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metalnessTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="emissiveTrackBar.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Form1</value>
-  </data>
+  <metadata name="Eraser.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>tr-TR</value>
   </metadata>
   <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>211, 17</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAaBJREFUeF7tkLFNBDEURK8QYhASKRnSJUj0QU4BhDRAHdRDI1fCklin8dMgy7sL
+        4vjzpZeMvd4/77AsS2lsWAkbVsKGlbBhJWxYCRtWwoaVsGElbFgJG1bChpWwobL3vN3eL8rr1U1Hu7bb
+        uE6KDZW9JwIi4MIFsMAsn4/Hjvfrh46RkNE5x3VSbKhwXKkZIiACLkwAC5xenjtGhXifjL5nYd7neet9
+        HtdJsaESAREQAZ0ALvBx99TBcxbiOb/nfSdN4XsUwj7EhkoEREBxARwKGS3MBWcLj85JBERABOwrgIXd
+        TxUWJrOF+D3PKTQCIiACflcAFyRccCSA3/M+z/l+BERABPysgNEChAUI3yO8P3o/AiIgAvYVwOEPuABx
+        pZTR/dnCbc3zuE6KDRUOf8iFCAuR0f0IiIA/JoDDBbjwbCGe833S1vh2XCfFhspouBALREAE/HMBHLfk
+        Ftqzq8d1UmyozI4rsYX27OpxnRQbKrPjSmyhPbt6XCfFhsrsuBJbaM+uHtdJsWElbFgJG1bChpWwYSVs
+        WAkbVsKGdVgOX+OA0t0SucX0AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAmRJREFUeF7tlLFNREEQQy+hAyJiSiClAFogIKEFKqABQqRrh04IaeIjpNFq//Oc
+        /L9Oi+BmLTk4e2a+vcEdlmUpzVSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSs
+        xFSsRBUG4+b+bekZ8q9B+oowGPMB5gNc+AOwIPn4+rki/TjT4Py9kL4inAkGJucDzAe4sAdgwJf3rxVZ
+        2PnuHv2IsRnSV4SdYCAGZkHnu3v0I8ZmSF8RdoKBGJgFne/u0Y8YmyF9RdgJBmJgFnS+u0c/YmyG9BXB
+        gAFYgIFJN0//7uljxeuH44pXt88rRsyTkL4iGMwHmA9Q7AH4AQZyBZzPe45un3mjRoP0FQHgQX7QFXQ+
+        7zm6feaNGg3SVwSAB/lBV9D5vOfo9pk3ajRIXxEAHuQHXUHn856j22feqNEgfUUAeNAFoE+6ef7J0ec+
+        50nml74iADzgAtEn3TwL0Oc+50nml74iADzgAtEn3TwL0Oc+50nml74iADzgAtEn3TwL0Oc+50nml74U
+        uMCDLoDbd4W4T5/3OO989l39+CEXePDcQPMB5gP88QcgeMB9wPksRLp9+iTno0aD9BUB4EH3QednpXu6
+        ffok56NGg/QVAeBB90HnZ6V7un36JOejRoP0FQHgQfdB52ele7p9+iTno0aD9BXBwH2APukCk3G2IZvp
+        GWMnIX1FMHAfpE/OB5gP8M8f4FxkoXvG2DBIXxEGIyvdM8aGQfqKMBhZ6Z4xNgzSV4TByEr3jLFhkL4U
+        qjEVKzEVKzEVKzEVKzEVKzEVKzEV63A5fAO/ePjBs1CrDgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAadJREFUeF7tlLFNRDEUBAkhI0YkZOSEFEAP5IgOaIAuqOHqoAJaoI5PYp32r4az
+        bENy+1aaZPD3eTfgYtu2aFAmgTIJlEmgTAJlEiiTQJkEyiRQJoEyCZRJoEwCZRIok0CZBEplNQ+v99sK
+        7ZrpUCcFpbIaKjVCu2Y61ElBqayGSo3QrpkOdVJQKquhUiO0a6ZDnRSUSi/0aOX963bH2+f1SV4OVzvu
+        nm5O0p7xa6iTglLphUorNUANcGYDeMHD9+OOXuHR888flzt6A7VnHkOdFJSKpwaoAcIG6BX2Bzte0KFv
+        FC/sg/h5H8T7OCiVGqAGqAF2A/QK+EC9846f7w3gf68BaoAa4H8H8B/0B1OpU/hgvYL+vZ+vAWqAGuBv
+        B/D0BnF8IIe+Ubyg44XbM4+hTgpKxVMD1ADhA3j8AY4X6v0T8/N0p9Ke8Wuok4JS6YUepXihGqAGOLMB
+        eqFHj9CumQ51UlAqq6FSI7RrpkOdFJTKaqjUCO2a6VAnBaWyGio1QrtmOtRJQZkEyiRQJoEyCZRJoEwC
+        ZRIok0CZBMokUCaBMoft4gfoKfNcOFvtxQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="sliderButtonPicE.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAfBAMAAABXI4NqAAAABGdBTUEAALGPC/xhBQAAAAxQTFRFExMT
+        ////xsbGWFZYUezdMgAAAAlwSFlzAAAWGAAAFhgBm154PQAAACdJREFUOMtjoDJgFMQClBTIllHCBMYG
+        ozLDUoZJyRgLIFeGeoCBAQChP0pXmN8HRQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="sliderButtonPicM.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAfBAMAAABXI4NqAAAABGdBTUEAALGPC/xhBQAAAAxQTFRFExMT
+        ////xsbGWFZYUezdMgAAAAlwSFlzAAAWGAAAFhgBm154PQAAACdJREFUOMtjoDJgFMQClBTIllHCBMYG
+        ozLDUoZJyRgLIFeGeoCBAQChP0pXmN8HRQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="sliderButtonPicR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAfBAMAAABXI4NqAAAABGdBTUEAALGPC/xhBQAAAAxQTFRFExMT
+        ////xsbGWFZYUezdMgAAAAlwSFlzAAAWGAAAFhgBm154PQAAACdJREFUOMtjoDJgFMQClBTIllHCBMYG
+        ozLDUoZJyRgLIFeGeoCBAQChP0pXmN8HRQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>56</value>
   </metadata>
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
 </root>

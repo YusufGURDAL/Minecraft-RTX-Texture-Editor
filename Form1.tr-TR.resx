@@ -58,61 +58,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Slider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1285, 131</value>
-  </data>
-  <data name="fileOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 618</value>
-  </data>
-  <data name="saveFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 618</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panelCanvas.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panelCanvas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 12</value>
-  </data>
-  <data name="metalnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>795, 12</value>
-  </data>
-  <data name="emissiveTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>945, 12</value>
-  </data>
-  <data name="roughnessTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1095, 12</value>
-  </data>
-  <data name="mVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>820, 615</value>
-  </data>
-  <data name="eVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>980, 615</value>
-  </data>
-  <data name="rVal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1130, 615</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>795, 656</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>955, 656</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1105, 656</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>733, 447</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 25</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>label4</value>
-  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -126,13 +71,10 @@
         WAkbVsKGdVgOX+OA0t0SucX0AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 64</value>
-  </data>
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAmRJREFUeF7tlLFNREEQQy+hAyJiSiClAFogIKEFKqABQqRrh04IaeIjpNFq//Oc
+        DAAACwwBP0AiyAAAAmRJREFUeF7tlLFNREEQQy+hAyJiSiClAFogIKEFKqABQqRrh04IaeIjpNFq//Oc
         /L9Oi+BmLTk4e2a+vcEdlmUpzVSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSsxFSs
         xFSsRBUG4+b+bekZ8q9B+oowGPMB5gNc+AOwIPn4+rki/TjT4Py9kL4inAkGJucDzAe4sAdgwJf3rxVZ
         2PnuHv2IsRnSV4SdYCAGZkHnu3v0I8ZmSF8RdoKBGJgFne/u0Y8YmyF9RdgJBmJgFnS+u0c/YmyG9BXB
@@ -144,16 +86,6 @@
         GWMnIX1FMHAfpE/OB5gP8M8f4FxkoXvG2DBIXxEGIyvdM8aGQfqKMBhZ6Z4xNgzSV4TByEr3jLFhkL4U
         qjEVKzEVKzEVKzEVKzEVKzEVKzEV63A5fAO/ePjBs1CrDgAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1120, 696</value>
-  </data>
-  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 64</value>
   </data>
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -167,23 +99,5 @@
         eqFHj9CumQ51UlAqq6FSI7RrpkOdFJTKaqjUCO2a6VAnBaWyGio1QrtmOtRJQZkEyiRQJoEyCZRJoEwC
         ZRIok0CZBMokUCaBMoft4gfoKfNcOFvtxQAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="pictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 64</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 88</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1253, 823</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>RTX Texture Editor for Minecraft</value>
   </data>
 </root>

@@ -18,65 +18,164 @@ namespace RTX_Texture_Editor_for_Minecraft
         public Form1()
         {
             InitializeComponent();
-            Slider.Width = 30;
             this.panelCanvas.MouseWheel += PanelCanvas_MouseWheel;
         }
         int pixelX, pixelY;
-        float def_value = 0.0f, Min = 0.0f, Max = 1.0f;
+        float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, Min = 0.0f, Max = 1.0f;
         bool firstTime = true;
-        public float Bar(float value)
+        public float BarM(float value)
         {
-            return (Slider.Height) * (value - Min) / (float)(Max - Min);
+            return (SliderM.Height-28) * (value - Min) / (float)(Max - Min);
         }
-        public void thumb(float value)
+        public float BarE(float value)
+        {
+            return (SliderE.Height - 28) * (value - Min) / (float)(Max - Min);
+        }
+        public void thumbM(float value)
         {
             if (value < Min)
                 value = Min;
             if (value > Max)
                 value = Max;
-            def_value = value;
-            Slider.Refresh();
+            def_valueM = value;
+            SliderM.Refresh();
+        }
+        public void thumbE(float value)
+        {
+            if (value < Min)
+                value = Min;
+            if (value > Max)
+                value = Max;
+            def_valueE = value;
+            SliderE.Refresh();
+        }
+        public void thumbR(float value)
+        {
+            if (value < Min)
+                value = Min;
+            if (value > Max)
+                value = Max;
+            def_valueR = value;
+            SliderR.Refresh();
         }
         public float Slider_height(int y)
         {
-            return Min + (Max - Min) * y / (float)(Slider.Height);
+            return Min + (Max - Min) * y / (float)(SliderE.Height);
         }
-        private void Slider_Paint(object sender, PaintEventArgs e)
-        {
-            float bar_size = 0.45f;
-            float y = 450-Bar(def_value);
-            int x = (int)(Slider.Width * bar_size);
-            if (y > 427)
-                y = 427;
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            e.Graphics.FillRectangle(Brushes.DimGray, 12, 0, 6, Slider.Height);
-            e.Graphics.FillRectangle(Brushes.Red, 12, y , Slider.Width-2*x, 450 );
-
-           using (Pen pen = new Pen(Color.Black, 8))
-            {
-                e.Graphics.DrawEllipse(pen, x - 6, y +4, Slider.Width / 2, Slider.Width / 2);
-                e.Graphics.FillEllipse(Brushes.Red, x - 6, y+4 , Slider.Width / 2, Slider.Width / 2);
-            }
-            using (Pen pen = new Pen(Color.White, 5))
-            {
-                e.Graphics.DrawEllipse(pen, x -6, y +4, Slider.Width / 2, Slider.Width / 2);
-            }
-
-        }
+        Image sliderButton1,sliderButton2, sliderButton3;
+        float slidery;
         bool mouse = false;
-        private void Slider_MouseDown(object sender, MouseEventArgs e)
+        private void Slider_PaintM(object sender, PaintEventArgs e)
+        {
+            sliderButton1 = sliderButtonPicM.Image;
+            Bitmap bmpSld = new Bitmap(sliderButtonPicM.Image);
+            float bar_size = 0.5f;
+            Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
+            slidery = SliderM.Height - BarM(def_valueM);
+            int x = (int)(SliderM.Width * bar_size);
+            e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderM.Height);
+            e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderM.Height - 6);
+            sliderButtonPicM.Location = new Point(SliderM.Location.X, (int)(slidery + SliderM.Location.Y - sliderButtonPicM.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderM.Height - slidery - 3);
+        }
+        private void Slider_MouseDownM(object sender, MouseEventArgs e)
         {
             mouse = true;
-            thumb(Slider_height(450-e.Y));
-
+            thumbM(Slider_height(SliderM.Height - e.Y));
+            if (!eraserOn)
+            {
+                M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
+                mVal.Text = M.ToString();
+            }
         }
-        private void Slider_MouseMove(object sender, MouseEventArgs e)
+        private void Slider_MouseMoveM(object sender, MouseEventArgs e)
         {
             if (!mouse)
                 return;
-            thumb(Slider_height(450-e.Y));
+            thumbM(Slider_height(SliderM.Height - e.Y));
+            if (!eraserOn)
+            {
+                M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
+                mVal.Text = M.ToString();
+            }
         }
-        private void Slider_MouseUp(object sender, MouseEventArgs e)
+        private void Slider_MouseUpM(object sender, MouseEventArgs e)
+        {
+            mouse = false;
+        }
+        private void Slider_PaintE(object sender, PaintEventArgs e)
+        {
+            sliderButton2 = sliderButtonPicE.Image;
+            Bitmap bmpSld = new Bitmap(sliderButtonPicE.Image);
+            float bar_size = 0.5f;
+            Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
+            slidery = SliderE.Height-BarE(def_valueE);
+            int x = (int)(SliderE.Width * bar_size);
+            e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderE.Height);
+            e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderE.Height - 6);
+            sliderButtonPicE.Location = new Point(SliderE.Location.X,(int) (slidery+ SliderE.Location.Y - sliderButtonPicE.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderE.Height-slidery-3);
+        }
+        private void Slider_MouseDownE(object sender, MouseEventArgs e)
+        {
+            mouse = true;
+            thumbE(Slider_height(SliderE.Height-e.Y));
+            if (!eraserOn)
+            {
+                E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
+                eVal.Text = E.ToString();
+            }
+        }
+        private void Slider_MouseMoveE(object sender, MouseEventArgs e)
+        {
+            if (!mouse)
+                return;
+            thumbE(Slider_height(SliderE.Height - e.Y));
+            if (!eraserOn)
+            {
+                E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
+                eVal.Text = E.ToString();
+            }
+        }
+        private void Slider_MouseUpE(object sender, MouseEventArgs e)
+        {
+            mouse = false;
+        }
+        private void Slider_PaintR(object sender, PaintEventArgs e)
+        {
+            sliderButton3 = sliderButtonPicR.Image;
+            Bitmap bmpSld = new Bitmap(sliderButtonPicR.Image);
+            float bar_size = 0.5f;
+            Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
+            slidery = SliderR.Height - BarE(def_valueR);
+            int x = (int)(SliderR.Width * bar_size);
+            e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderR.Height);
+            e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderR.Height - 6);
+            sliderButtonPicR.Location = new Point(SliderR.Location.X, (int)(slidery + SliderR.Location.Y - sliderButtonPicR.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderR.Height - slidery - 3);
+        }
+        private void Slider_MouseDownR(object sender, MouseEventArgs e)
+        {
+            mouse = true;
+            thumbR(Slider_height(SliderR.Height - e.Y));
+            if (!eraserOn)
+            {
+                R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
+                rVal.Text = R.ToString();
+            }
+        }
+        private void Slider_MouseMoveR(object sender, MouseEventArgs e)
+        {
+            if (!mouse)
+                return;
+            thumbR(Slider_height(SliderR.Height - e.Y));
+            if (!eraserOn)
+            {
+                R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
+                rVal.Text = R.ToString();
+            }
+        }
+        private void Slider_MouseUpR(object sender, MouseEventArgs e)
         {
             mouse = false;
         }
@@ -102,7 +201,7 @@ namespace RTX_Texture_Editor_for_Minecraft
                 bm_size = bm.Size;
                 zoom = 1;
                 factor = 1;
-                limit = 32;
+                limit = 64;
                 pixelX = x;
                 pixelY = y;
                 pixel = new Color[pixelX, pixelY];
@@ -129,7 +228,7 @@ namespace RTX_Texture_Editor_for_Minecraft
                     pictureBox1.Invalidate();
                 }
             }
-            else { MessageBox.Show("No image loaded, first upload image "); }
+            else { MessageBox.Show("No image loaded, first upload an image. "); }
         }
         private void saveFile_Click(object sender, EventArgs e)
         {
@@ -173,24 +272,37 @@ namespace RTX_Texture_Editor_for_Minecraft
                 pictureBox1.Invalidate();
             }
         }
-        private void metalnessTrackBar_Scroll(object sender, EventArgs e)
+        bool eraserOn = false;
+        bool firstEraser = true;
+        int tempM, tempE, tempR;
+        string drawtool;
+        private void Pen_Click(object sender, EventArgs e)
         {
-            M = metalnessTrackBar.Value;
-            mVal.Text = M.ToString("d");
+            eraserOn = false;
+            if (!eraserOn && !firstEraser) 
+            {
+                drawtool="pen";
+                M = tempM; E = tempE; R = tempR;
+                mVal.Text = M.ToString();
+                eVal.Text = E.ToString();
+                rVal.Text = R.ToString();
+            }
         }
-        private void emissiveTrackBar_Scroll(object sender, EventArgs e)
+        private void Eraser_Click(object sender, EventArgs e)
         {
-            E = emissiveTrackBar.Value;
-            eVal.Text = E.ToString("d");
+            eraserOn = true;
+            if (eraserOn)
+            {
+                tempM = M; tempE = E; tempR = R;
+                M = 255;
+                E = 255;
+                R = 255;
+                firstEraser = false;
+            }
         }
-        private void roughnessTrackBar_Scroll(object sender, EventArgs e)
+        private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
-            R = roughnessTrackBar.Value;
-            rVal.Text = R.ToString("d");
-        }
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if ( opened)
+            if (opened)
             {
                 Color color = Color.FromArgb(M, E, R);
                 SolidBrush myBrush = new SolidBrush(color);
@@ -199,16 +311,18 @@ namespace RTX_Texture_Editor_for_Minecraft
                 cursorX = e.X;
                 cursorY = e.Y;
                 int xAxis = (int)(cursorX * zoom * (float)Math.Pow(2, 5 - factor) * bm.Width / 16 / (float)(bm.Width * Math.Pow(2, factor - 1)));
-                int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) * bm.Height / 16 / (float)(bm.Height * Math.Pow(2, factor - 1))); 
-                Point touch = new Point(xAxis*zoom, yAxis*zoom);
+                int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) * bm.Height / 16 / (float)(bm.Height * Math.Pow(2, factor - 1)));
+                Point touch = new Point(xAxis * zoom, yAxis * zoom);
                 graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
-                if (xAxis <= (pictureBox1.Width/zoom)-1 && yAxis <= (pictureBox1.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0)    
+                if (xAxis <= (pictureBox1.Width / zoom) - 1 && yAxis <= (pictureBox1.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0)
                 {
                     pixel[xAxis, yAxis] = color;
                 }
+
+
             }
         }
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void canvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (cursorX != -1 && cursorY != -1 && cursorMoving && opened) 
             {
@@ -227,13 +341,13 @@ namespace RTX_Texture_Editor_for_Minecraft
                 }
             }
         }
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        private void canvas_MouseUp(object sender, MouseEventArgs e)
         {
             cursorMoving = false;
             cursorX = -1;
             cursorY = -1;
         }
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private void canvas_Paint(object sender, PaintEventArgs e)
         {
             if (file != null)
             {
