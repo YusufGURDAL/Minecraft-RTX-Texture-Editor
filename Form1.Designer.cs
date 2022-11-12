@@ -39,7 +39,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.saveFile = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelCanvas = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.canvas = new System.Windows.Forms.PictureBox();
             this.mVal = new System.Windows.Forms.Label();
             this.eVal = new System.Windows.Forms.Label();
             this.rVal = new System.Windows.Forms.Label();
@@ -55,10 +55,11 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.SliderR = new System.Windows.Forms.PictureBox();
             this.sliderButtonPicM = new System.Windows.Forms.PictureBox();
             this.sliderButtonPicR = new System.Windows.Forms.PictureBox();
+            this.Rectangle = new System.Windows.Forms.Button();
             Eraser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SliderE)).BeginInit();
             this.panelCanvas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -124,25 +125,25 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             this.panelCanvas.AutoScroll = true;
             this.panelCanvas.BackColor = System.Drawing.Color.DimGray;
-            this.panelCanvas.Controls.Add(this.pictureBox1);
+            this.panelCanvas.Controls.Add(this.canvas);
             this.panelCanvas.Cursor = System.Windows.Forms.Cursors.Cross;
             this.panelCanvas.Location = new System.Drawing.Point(108, 12);
             this.panelCanvas.Name = "panelCanvas";
             this.panelCanvas.Size = new System.Drawing.Size(600, 600);
             this.panelCanvas.TabIndex = 4;
             // 
-            // pictureBox1
+            // canvas
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(200, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
+            this.canvas.BackColor = System.Drawing.Color.White;
+            this.canvas.Location = new System.Drawing.Point(200, 200);
+            this.canvas.Name = "canvas";
+            this.canvas.Size = new System.Drawing.Size(200, 200);
+            this.canvas.TabIndex = 0;
+            this.canvas.TabStop = false;
+            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
+            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
+            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
             // 
             // mVal
             // 
@@ -315,12 +316,23 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.sliderButtonPicR.TabIndex = 25;
             this.sliderButtonPicR.TabStop = false;
             // 
+            // Rectangle
+            // 
+            this.Rectangle.Location = new System.Drawing.Point(13, 201);
+            this.Rectangle.Name = "Rectangle";
+            this.Rectangle.Size = new System.Drawing.Size(87, 91);
+            this.Rectangle.TabIndex = 26;
+            this.Rectangle.Text = "Rectangle";
+            this.Rectangle.UseVisualStyleBackColor = true;
+            this.Rectangle.Click += new System.EventHandler(this.Rectangle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1407, 823);
+            this.ClientSize = new System.Drawing.Size(1319, 823);
+            this.Controls.Add(this.Rectangle);
             this.Controls.Add(this.sliderButtonPicR);
             this.Controls.Add(this.sliderButtonPicM);
             this.Controls.Add(this.SliderR);
@@ -346,7 +358,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.SliderE)).EndInit();
             this.panelCanvas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -374,7 +386,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         private System.Windows.Forms.Button saveFile;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Panel panelCanvas;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox canvas;
         private System.Windows.Forms.Label mVal;
         private System.Windows.Forms.Label eVal;
         private System.Windows.Forms.Label rVal;
@@ -390,6 +402,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         private System.Windows.Forms.PictureBox SliderR;
         private System.Windows.Forms.PictureBox sliderButtonPicM;
         private System.Windows.Forms.PictureBox sliderButtonPicR;
+        private System.Windows.Forms.Button Rectangle;
     }
 }
 
