@@ -56,6 +56,10 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.sliderButtonPicM = new System.Windows.Forms.PictureBox();
             this.sliderButtonPicR = new System.Windows.Forms.PictureBox();
             this.Rectangle = new System.Windows.Forms.Button();
+            this.canvasPanelFrame = new System.Windows.Forms.PictureBox();
+            this.penSizeUp = new System.Windows.Forms.Button();
+            this.penSizeDown = new System.Windows.Forms.Button();
+            this.pen_size = new System.Windows.Forms.Label();
             Eraser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SliderE)).BeginInit();
             this.panelCanvas.SuspendLayout();
@@ -68,6 +72,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             ((System.ComponentModel.ISupportInitialize)(this.SliderR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderButtonPicM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderButtonPicR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvasPanelFrame)).BeginInit();
             this.SuspendLayout();
             // 
             // Eraser
@@ -97,7 +102,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             this.fileOpen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fileOpen.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fileOpen.Location = new System.Drawing.Point(107, 618);
+            this.fileOpen.Location = new System.Drawing.Point(117, 638);
             this.fileOpen.Name = "fileOpen";
             this.fileOpen.Size = new System.Drawing.Size(296, 40);
             this.fileOpen.TabIndex = 2;
@@ -113,7 +118,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             this.saveFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveFile.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveFile.Location = new System.Drawing.Point(411, 618);
+            this.saveFile.Location = new System.Drawing.Point(421, 638);
             this.saveFile.Name = "saveFile";
             this.saveFile.Size = new System.Drawing.Size(296, 40);
             this.saveFile.TabIndex = 3;
@@ -127,7 +132,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.panelCanvas.BackColor = System.Drawing.Color.DimGray;
             this.panelCanvas.Controls.Add(this.canvas);
             this.panelCanvas.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.panelCanvas.Location = new System.Drawing.Point(108, 12);
+            this.panelCanvas.Location = new System.Drawing.Point(117, 21);
             this.panelCanvas.Name = "panelCanvas";
             this.panelCanvas.Size = new System.Drawing.Size(600, 600);
             this.panelCanvas.TabIndex = 4;
@@ -318,13 +323,55 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // Rectangle
             // 
-            this.Rectangle.Location = new System.Drawing.Point(13, 201);
+            this.Rectangle.Location = new System.Drawing.Point(12, 200);
             this.Rectangle.Name = "Rectangle";
-            this.Rectangle.Size = new System.Drawing.Size(87, 91);
+            this.Rectangle.Size = new System.Drawing.Size(88, 88);
             this.Rectangle.TabIndex = 26;
             this.Rectangle.Text = "Rectangle";
             this.Rectangle.UseVisualStyleBackColor = true;
             this.Rectangle.Click += new System.EventHandler(this.Rectangle_Click);
+            // 
+            // canvasPanelFrame
+            // 
+            this.canvasPanelFrame.BackColor = System.Drawing.Color.Transparent;
+            this.canvasPanelFrame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("canvasPanelFrame.BackgroundImage")));
+            this.canvasPanelFrame.Location = new System.Drawing.Point(108, 12);
+            this.canvasPanelFrame.Name = "canvasPanelFrame";
+            this.canvasPanelFrame.Size = new System.Drawing.Size(618, 618);
+            this.canvasPanelFrame.TabIndex = 27;
+            this.canvasPanelFrame.TabStop = false;
+            // 
+            // penSizeUp
+            // 
+            this.penSizeUp.Location = new System.Drawing.Point(12, 452);
+            this.penSizeUp.Name = "penSizeUp";
+            this.penSizeUp.Size = new System.Drawing.Size(88, 30);
+            this.penSizeUp.TabIndex = 28;
+            this.penSizeUp.Text = "+";
+            this.penSizeUp.UseVisualStyleBackColor = true;
+            this.penSizeUp.Click += new System.EventHandler(this.penSizeUp_Click);
+            // 
+            // penSizeDown
+            // 
+            this.penSizeDown.Location = new System.Drawing.Point(12, 590);
+            this.penSizeDown.Name = "penSizeDown";
+            this.penSizeDown.Size = new System.Drawing.Size(88, 30);
+            this.penSizeDown.TabIndex = 29;
+            this.penSizeDown.Text = "-";
+            this.penSizeDown.UseVisualStyleBackColor = true;
+            this.penSizeDown.Click += new System.EventHandler(this.penSizeDown_Click);
+            // 
+            // pen_size
+            // 
+            this.pen_size.BackColor = System.Drawing.Color.Transparent;
+            this.pen_size.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pen_size.ForeColor = System.Drawing.Color.White;
+            this.pen_size.Location = new System.Drawing.Point(12, 492);
+            this.pen_size.Name = "pen_size";
+            this.pen_size.Size = new System.Drawing.Size(88, 88);
+            this.pen_size.TabIndex = 30;
+            this.pen_size.Text = "   Pen       size:        1     pixel";
+            this.pen_size.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -332,12 +379,15 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1319, 823);
+            this.Controls.Add(this.pen_size);
+            this.Controls.Add(this.penSizeDown);
+            this.Controls.Add(this.penSizeUp);
+            this.Controls.Add(this.panelCanvas);
             this.Controls.Add(this.Rectangle);
             this.Controls.Add(this.sliderButtonPicR);
             this.Controls.Add(this.sliderButtonPicM);
             this.Controls.Add(this.SliderR);
             this.Controls.Add(this.SliderM);
-            this.Controls.Add(this.panelCanvas);
             this.Controls.Add(this.sliderButtonPicE);
             this.Controls.Add(this.Pen);
             this.Controls.Add(Eraser);
@@ -353,6 +403,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.Controls.Add(this.saveFile);
             this.Controls.Add(this.fileOpen);
             this.Controls.Add(this.SliderE);
+            this.Controls.Add(this.canvasPanelFrame);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -367,6 +418,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             ((System.ComponentModel.ISupportInitialize)(this.SliderR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderButtonPicM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderButtonPicR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvasPanelFrame)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,6 +455,10 @@ namespace RTX_Texture_Editor_for_Minecraft
         private System.Windows.Forms.PictureBox sliderButtonPicM;
         private System.Windows.Forms.PictureBox sliderButtonPicR;
         private System.Windows.Forms.Button Rectangle;
+        private System.Windows.Forms.PictureBox canvasPanelFrame;
+        private System.Windows.Forms.Button penSizeUp;
+        private System.Windows.Forms.Button penSizeDown;
+        private System.Windows.Forms.Label pen_size;
     }
 }
 

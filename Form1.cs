@@ -238,29 +238,77 @@ namespace RTX_Texture_Editor_for_Minecraft
                     canvas.Image = null;
                     firstTime = false;
                     zoom = 1;
+                    canvas.Size = new Size(zoom * x, zoom * y);
+                    canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
                 }
                 if (e.Delta > 0 && zoom * 2 <= limit)
                 {
                     zoom = zoom * 2;
                     factor++;
+                    canvas.Size = new Size(zoom * x, zoom * y);
+                    if (zoom >= limit)
+                    {
+                        canvas.Location = new Point(0, 0);
+                    }
+                    else
+                    {
+                        canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                    }
                 }
                 else if (e.Delta < 0 && zoom / 2 > 0.5f)
                 {
                     zoom = zoom / 2;
                     factor--;
+                    canvas.Size = new Size(zoom * x, zoom * y);
+                    if (zoom >= limit) 
+                    {
+                        canvas.Location = new Point(0, 0);
+                    }
+                    else
+                    {
+                        canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                    }
                 }
-                canvas.Size = new Size(zoom * x, zoom * y);
-                canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
                 canvas.Invalidate();
             }
         }
         bool eraserOn = false;
-        bool penOn = true, rectOn = false, brushOn = false;
+        int penSize = 1;
+        int penSizeTemp;
+        private void penSizeUp_Click(object sender, EventArgs e)
+        {
+            if (penSize + 2 <= 15 && penOn)
+                penSize += 2;
+            if (penOn)
+            {
+                penSizeTemp = penSize;
+                if (penSizeTemp == 1)
+                    pen_size.Text = "Pen size:\n" + penSizeTemp.ToString() + "\npixel";
+                else
+                    pen_size.Text = "Pen size:\n" + penSizeTemp.ToString() + "\npixels";
+            }
+        }
+
+        private void penSizeDown_Click(object sender, EventArgs e)
+        {
+            if (penSize - 2 > 0 && penOn)
+                penSize -= 2;
+            if (penOn) 
+            {
+                penSizeTemp = penSize;
+                if (penSizeTemp == 1)
+                    pen_size.Text = "Pen size:\n" + penSizeTemp.ToString() + "\npixel";
+                else
+                    pen_size.Text = "Pen size:\n" + penSizeTemp.ToString() + "\npixels";
+            }
+        }
+        bool penOn = true, rectOn = false;
         private void Pen_Click(object sender, EventArgs e)
         {
             eraserOn = false;
             penOn = true;
             rectOn = false;
+            penSize = penSizeTemp;
         }
         private void Rectangle_Click(object sender, EventArgs e)
         {
@@ -273,6 +321,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             eraserOn = true;
             penOn = false;
             rectOn = false;
+            penSize = 1;
         }
         int recx, recy;
         private void canvas_MouseDown(object sender, MouseEventArgs e)
@@ -296,11 +345,18 @@ namespace RTX_Texture_Editor_for_Minecraft
                 cursorY = e.Y;
                 int xAxis = (int)(cursorX * zoom * (float)Math.Pow(2, 5 - factor) * bm.Width / 16 / (float)(bm.Width * Math.Pow(2, factor - 1)));
                 int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) * bm.Height / 16 / (float)(bm.Height * Math.Pow(2, factor - 1)));
-                Point touch = new Point(xAxis * zoom, yAxis * zoom);
-                graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
+                Point touch = new Point((xAxis - penSize/2) * zoom, (yAxis - penSize/2) * zoom);
+                graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * penSize * zoom / bm.Width, file.Height * penSize * zoom / bm.Height);
                 if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && penOn)
                 {
-                    pixel[xAxis, yAxis] = color;
+                    for (int i = (xAxis - (int)(penSize / 2)); i <= (xAxis + (int)(penSize / 2)); i++)
+                    {
+                        for (int j = (yAxis - (int)(penSize / 2)); j <= (yAxis + (int)(penSize / 2)); j++) 
+                        {
+                            if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
+                                pixel[i, j] = color;
+                        }
+                    }
                 }
                 else if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && eraserOn)
                 {
@@ -312,7 +368,6 @@ namespace RTX_Texture_Editor_for_Minecraft
                 cursorMoving = true; 
                 cursorX = e.X;
                 cursorY = e.Y;
-                
             }
         }
         private void canvas_MouseMove(object sender, MouseEventArgs e)
@@ -337,11 +392,18 @@ namespace RTX_Texture_Editor_for_Minecraft
                     cursorY = e.Y;
                     int xAxis = (int)(cursorX * zoom * (float)Math.Pow(2, 5 - factor) * bm.Width / 16 / (float)(bm.Width * Math.Pow(2, factor - 1)));
                     int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) * bm.Height / 16 / (float)(bm.Height * Math.Pow(2, factor - 1)));
-                    Point touch = new Point(xAxis * zoom, yAxis * zoom);
-                    graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
+                    Point touch = new Point((xAxis - penSize/2) * zoom, (yAxis - penSize/2) * zoom);
+                    graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * penSize * zoom / bm.Width, file.Height * penSize * zoom / bm.Height);
                     if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && penOn)
                     {
-                        pixel[xAxis, yAxis] = color;
+                        for (int i = (xAxis - (int)(penSize / 2)); i <= (xAxis + (int)(penSize / 2)); i++)
+                        {
+                            for (int j = (yAxis - (int)(penSize / 2)); j <= (yAxis + (int)(penSize / 2)); j++)
+                            {
+                                if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
+                                    pixel[i, j] = color;
+                            }
+                        }
                     }
                     else if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && eraserOn)
                     {
@@ -464,7 +526,6 @@ namespace RTX_Texture_Editor_for_Minecraft
                     }
                 }
                 graphics = canvas.CreateGraphics();
-
             }
         }
         Graphics graphics;
