@@ -82,24 +82,16 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             mouse = true;
             thumbM(Slider_height(SliderM.Height - e.Y));
-            if (!eraserOn)
-            {
-                M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
-                mVal.Text = M.ToString();
-            }
-            tempM = M;
+            M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
+            mVal.Text = M.ToString();
         }
         private void Slider_MouseMoveM(object sender, MouseEventArgs e)
         {
             if (!mouse)
                 return;
             thumbM(Slider_height(SliderM.Height - e.Y));
-            if (!eraserOn)
-            {
-                M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
-                mVal.Text = M.ToString();
-            }
-            tempM = M;
+            M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
+            mVal.Text = M.ToString();
         }
         private void Slider_MouseUpM(object sender, MouseEventArgs e)
         {
@@ -121,25 +113,17 @@ namespace RTX_Texture_Editor_for_Minecraft
         private void Slider_MouseDownE(object sender, MouseEventArgs e)
         {
             mouse = true;
-            thumbE(Slider_height(SliderE.Height-e.Y));
-            if (!eraserOn)
-            {
-                E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
-                eVal.Text = E.ToString();
-            }
-            tempE = E;
+            thumbE(Slider_height(SliderE.Height - e.Y));
+            E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
+            eVal.Text = E.ToString();
         }
         private void Slider_MouseMoveE(object sender, MouseEventArgs e)
         {
             if (!mouse)
                 return;
             thumbE(Slider_height(SliderE.Height - e.Y));
-            if (!eraserOn)
-            {
-                E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
-                eVal.Text = E.ToString();
-            }
-            tempE = E;
+            E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
+            eVal.Text = E.ToString();
         }
         private void Slider_MouseUpE(object sender, MouseEventArgs e)
         {
@@ -162,24 +146,16 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             mouse = true;
             thumbR(Slider_height(SliderR.Height - e.Y));
-            if (!eraserOn)
-            {
-                R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
-                rVal.Text = R.ToString();
-            }
-            tempR = R;
+            R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
+            rVal.Text = R.ToString();
         }
         private void Slider_MouseMoveR(object sender, MouseEventArgs e)
         {
             if (!mouse)
                 return;
             thumbR(Slider_height(SliderR.Height - e.Y));
-            if (!eraserOn)
-            {
-                R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
-                rVal.Text = R.ToString();
-            }
-            tempR = R;
+            R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
+            rVal.Text = R.ToString();
         }
         private void Slider_MouseUpR(object sender, MouseEventArgs e)
         {
@@ -280,32 +256,17 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         bool eraserOn = false;
         bool penOn = true, rectOn = false, brushOn = false;
-        int tempM, tempE, tempR;
         private void Pen_Click(object sender, EventArgs e)
         {
             eraserOn = false;
             penOn = true;
             rectOn = false;
-            if (!eraserOn) 
-            {
-                M = tempM; E = tempE; R = tempR;
-                mVal.Text = M.ToString();
-                eVal.Text = E.ToString();
-                rVal.Text = R.ToString();
-            }
         }
         private void Rectangle_Click(object sender, EventArgs e)
         {
             eraserOn = false;
             penOn = false;
             rectOn = true;
-            if (!eraserOn)
-            {
-                M = tempM; E = tempE; R = tempR;
-                mVal.Text = M.ToString();
-                eVal.Text = E.ToString();
-                rVal.Text = R.ToString();
-            }
         }
         private void Eraser_Click(object sender, EventArgs e)
         {
@@ -316,17 +277,20 @@ namespace RTX_Texture_Editor_for_Minecraft
         int recx, recy;
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
-            if (opened && (penOn||eraserOn))
+            if (opened && (penOn || eraserOn))
             {
-                if (eraserOn)
-                {
-                    M = 255;
-                    E = 255;
-                    R = 255;
-                }
                 Color color = Color.FromArgb(M, E, R);
+                Color eraserColor = Color.FromArgb(255, 255, 255);
                 SolidBrush myBrush = new SolidBrush(color);
-                myBrush.Color = Color.FromArgb(255, color);
+                SolidBrush eraser = new SolidBrush(eraserColor);
+                if ((penOn || rectOn) && !eraserOn) 
+                {
+                    myBrush.Color = Color.FromArgb(255, color);
+                }
+                else if (eraserOn)
+                {
+                    myBrush.Color = Color.FromArgb(255, eraserColor);
+                }
                 cursorMoving = true;
                 cursorX = e.X;
                 cursorY = e.Y;
@@ -334,12 +298,16 @@ namespace RTX_Texture_Editor_for_Minecraft
                 int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) * bm.Height / 16 / (float)(bm.Height * Math.Pow(2, factor - 1)));
                 Point touch = new Point(xAxis * zoom, yAxis * zoom);
                 graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
-                if (xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0)
+                if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && penOn)
                 {
                     pixel[xAxis, yAxis] = color;
                 }
+                else if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && eraserOn)
+                {
+                    pixel[xAxis, yAxis] = eraserColor;
+                }
             }
-            else if (opened&&rectOn)
+            else if (opened && rectOn) 
             {
                 cursorMoving = true; 
                 cursorX = e.X;
@@ -351,26 +319,33 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             if (cursorX != -1 && cursorY != -1 && cursorMoving && opened && (penOn || eraserOn || rectOn)) 
             {
-                if (eraserOn)
+                Color color = Color.FromArgb(M, E, R);
+                Color eraserColor = Color.FromArgb(255, 255, 255);
+                SolidBrush myBrush = new SolidBrush(color);
+                SolidBrush eraser = new SolidBrush(eraserColor);
+                if ((penOn || rectOn) && !eraserOn)
                 {
-                    M = 255;
-                    E = 255;
-                    R = 255;
+                    myBrush.Color = Color.FromArgb(255, color);
+                }
+                else if (eraserOn)
+                {
+                    myBrush.Color = Color.FromArgb(255, eraserColor);
                 }
                 if (penOn || eraserOn) 
                 {
-                    Color color = Color.FromArgb(M, E, R);
-                    SolidBrush myBrush = new SolidBrush(color);
-                    myBrush.Color = Color.FromArgb(255, color);
                     cursorX = e.X;
                     cursorY = e.Y;
                     int xAxis = (int)(cursorX * zoom * (float)Math.Pow(2, 5 - factor) * bm.Width / 16 / (float)(bm.Width * Math.Pow(2, factor - 1)));
                     int yAxis = (int)(cursorY * zoom * (float)Math.Pow(2, 5 - factor) * bm.Height / 16 / (float)(bm.Height * Math.Pow(2, factor - 1)));
                     Point touch = new Point(xAxis * zoom, yAxis * zoom);
                     graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
-                    if (xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0)
+                    if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && penOn)
                     {
                         pixel[xAxis, yAxis] = color;
+                    }
+                    else if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && eraserOn)
+                    {
+                        pixel[xAxis, yAxis] = eraserColor;
                     }
                 }
                 if (rectOn)
