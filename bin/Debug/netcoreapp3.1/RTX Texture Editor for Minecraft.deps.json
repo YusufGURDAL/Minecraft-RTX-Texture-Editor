@@ -9,6 +9,11 @@
       "RTX Texture Editor for Minecraft/1.0.0": {
         "runtime": {
           "RTX Texture Editor for Minecraft.dll": {}
+        },
+        "resources": {
+          "tr-TR/RTX Texture Editor for Minecraft.resources.dll": {
+            "locale": "tr-TR"
+          }
         }
       }
     }

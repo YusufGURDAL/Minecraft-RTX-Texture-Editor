@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace RTX_Texture_Editor_for_Minecraft
 {
@@ -21,7 +22,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.panelCanvas.MouseWheel += PanelCanvas_MouseWheel;
         }
         int pixelX, pixelY;
-        float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, Min = 0.0f, Max = 1.0f;
+        float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, def_valueG = 0.0f, Min = 0.0f, Max = 1.0f;
         bool firstTime = true;
         public float BarM(float value)
         {
@@ -30,6 +31,14 @@ namespace RTX_Texture_Editor_for_Minecraft
         public float BarE(float value)
         {
             return (SliderE.Height - 28) * (value - Min) / (float)(Max - Min);
+        }
+        public float BarR(float value)
+        {
+            return (SliderR.Height - 28) * (value - Min) / (float)(Max - Min);
+        }
+        public float BarG(float value)
+        {
+            return (SliderG.Height - 28) * (value - Min) / (float)(Max - Min);
         }
         public void thumbM(float value)
         {
@@ -58,11 +67,20 @@ namespace RTX_Texture_Editor_for_Minecraft
             def_valueR = value;
             SliderR.Refresh();
         }
+        public void thumbG(float value)
+        {
+            if (value < Min)
+                value = Min;
+            if (value > Max)
+                value = Max;
+            def_valueG = value;
+            SliderG.Refresh();
+        }
         public float Slider_height(int y)
         {
             return Min + (Max - Min) * y / (float)(SliderE.Height);
         }
-        Image sliderButton1,sliderButton2, sliderButton3;
+        Image sliderButton1, sliderButton2, sliderButton3, sliderButton4;
         float slidery;
         bool mouse = false;
         private void Slider_PaintM(object sender, PaintEventArgs e)
@@ -161,9 +179,45 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             mouse = false;
         }
+        private void Slider_PaintG(object sender, PaintEventArgs e)
+        {
+            sliderButton4 = sliderButtonPicG.Image;
+            Bitmap bmpSld = new Bitmap(sliderButtonPicG.Image);
+            float bar_size = 0.5f;
+            Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
+            slidery = SliderG.Height - BarG(def_valueG);
+            int x = (int)(SliderG.Width * bar_size);
+            e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderG.Height);
+            e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderG.Height - 6);
+            sliderButtonPicG.Location = new Point(SliderG.Location.X, (int)(slidery + SliderG.Location.Y - sliderButtonPicG.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderG.Height - slidery - 3);
+        }
+        private void Slider_MouseDownG(object sender, MouseEventArgs e)
+        {
+            mouse = true;
+            thumbG(Slider_height(SliderG.Height - e.Y));
+            G = (int)((SliderG.Height - slidery) / (SliderG.Height - sliderButtonPicG.Height + 3) * 255);
+            gVal.Text = G.ToString();
+        }
+        private void Slider_MouseMoveG(object sender, MouseEventArgs e)
+        {
+            if (!mouse)
+                return;
+            thumbG(Slider_height(SliderG.Height - e.Y));
+            G = (int)((SliderG.Height - slidery) / (SliderG.Height - sliderButtonPicG.Height + 3) * 255);
+            grayColor = Color.FromArgb(G, G, G);
+            gVal.Text = G.ToString();
+        }
+        private void Slider_MouseUpG(object sender, MouseEventArgs e)
+        {
+            mouse = false;
+        }
         Image file;
+        Image tempPic;
+        Image tempPicGray;
         Boolean opened = false;
         Color[,] pixel;
+        Color[,] pixelGray;
         string filePath="";
         void openImage()
         {
@@ -187,6 +241,11 @@ namespace RTX_Texture_Editor_for_Minecraft
                 pixelX = x;
                 pixelY = y;
                 pixel = new Color[pixelX, pixelY];
+                pixelGray = new Color[pixelX, pixelY];
+                firstTime = true;
+                firstTimeGray = true;
+                GrayScale = false;
+                grayScaleButton.Text = "Gray Scale: OFF";
             }
         }
         void saveImage()
@@ -200,14 +259,35 @@ namespace RTX_Texture_Editor_for_Minecraft
                 canvas.Invalidate();
                 string fileName = Path.GetFileName(filePath);
                 fileName = fileName.Substring(0, fileName.Length - 4);
-                using (var bitmap = new Bitmap(canvas.Width, canvas.Height))
-                {
+                if (!GrayScale)
+                    using (var bitmap = new Bitmap(canvas.Width, canvas.Height)) 
+                    {
                     canvas.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
-                    bitmap.Save(@$"C:\Users\yusuf\Desktop\{fileName}_mer.png");
+                    bitmap.Save(@$"{savePath}\{fileName}_mer.png");
                     zoom = temp;
                     canvas.Size = new Size(zoom * x, zoom * y);
                     canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
                     canvas.Invalidate();
+                    }
+                if (GrayScale)
+                {
+                    
+                    using (var bitmap = new Bitmap(canvas.Width, canvas.Height))
+                    {
+                        for (int i = 0; i <= canvas.Width - 1; i++)
+                        {
+                            for (int j = 0; j <= canvas.Height - 1; j++)
+                            {
+                                bitmap.SetPixel(i, j, bmpGray.GetPixel(i, j));
+                            }
+                        }
+                        var bitmap1 = ToGrayscale(bitmap);
+                        bitmap1.Save(@$"{savePath}\{fileName}_normal.png");
+                        zoom = temp;
+                        canvas.Size = new Size(zoom * x, zoom * y);
+                        canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                        canvas.Invalidate();
+                    }
                 }
             }
             else { MessageBox.Show("No image loaded, first upload an image. "); }
@@ -227,8 +307,9 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         Bitmap bm;
         Size bm_size;
-        int zoom, limit, x, y, factor = 1;
-        int M, E, R;
+        int zoom = 1, limit, x, y, factor = 1;
+        int M, E, R, G;
+        Color grayColor = Color.FromArgb(0, 0, 0);
         private void PanelCanvas_MouseWheel(object sender, MouseEventArgs e)
         {
             if (bm != null)
@@ -260,21 +341,14 @@ namespace RTX_Texture_Editor_for_Minecraft
                     zoom = zoom / 2;
                     factor--;
                     canvas.Size = new Size(zoom * x, zoom * y);
-                    if (zoom >= limit) 
-                    {
-                        canvas.Location = new Point(0, 0);
-                    }
-                    else
-                    {
-                        canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
-                    }
+                    canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
                 }
                 canvas.Invalidate();
             }
         }
         bool eraserOn = false;
         int penSize = 1;
-        int penSizeTemp;
+        int penSizeTemp = 1;
         private void penSizeUp_Click(object sender, EventArgs e)
         {
             if (penSize + 2 <= 15 && penOn)
@@ -302,6 +376,74 @@ namespace RTX_Texture_Editor_for_Minecraft
                     pen_size.Text = "Pen size:\n" + penSizeTemp.ToString() + "\npixels";
             }
         }
+        bool GrayScale = false;
+        bool firstTimeGray = true;
+        string savePath;
+
+        private void SaveLocButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog path = new FolderBrowserDialog();
+            if (path.ShowDialog() == DialogResult.OK)
+                savePath = path.SelectedPath;
+        }
+
+        Bitmap bmpGray;
+        private void grayScaleButton_Click(object sender, EventArgs e)
+        {
+            if (opened && !GrayScale)
+            {
+                GrayScale = true;
+                grayScaleButton.Text = "Gray Scale: ON";
+                tempPic = canvas.Image;
+                if (firstTimeGray)
+                {
+                    firstTimeGray = false;
+                    int temp = zoom;
+                    zoom = 1;
+                    canvas.Size = new Size(x, y);
+                    canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                    bmpGray = new Bitmap(canvas.Width, canvas.Height);
+                    using (var bitmap = new Bitmap(canvas.Width, canvas.Height))
+                    {
+                        canvas.DrawToBitmap(bmpGray, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+                        zoom = temp;
+                        canvas.Size = new Size(zoom * x, zoom * y);
+                        canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                        canvas.Invalidate();
+                    }
+                }
+                else if (GrayScale)
+                {
+                    canvas.Image = tempPicGray;
+                }
+                for (int i = 0; i < bm.Width; i++)
+                {
+                    for (int j = 0; j < bm.Height; j++)
+                    {
+                        pixelGray[i, j] = bmpGray.GetPixel(i, j);
+                        Color color = Color.FromArgb((int)((pixelGray[i, j].R + pixelGray[i, j].G + pixelGray[i, j].B) / 3), (int)((pixelGray[i, j].R + pixelGray[i, j].G + pixelGray[i, j].B) / 3), (int)((pixelGray[i, j].R + pixelGray[i, j].G + pixelGray[i, j].B) / 3));
+                        pixelGray[i, j] = color;
+                    }
+                }
+                ColorPanel.Visible = false;
+                ColorPanel.Enabled = false;
+                GrayScalePanel.Visible = true;
+                GrayScalePanel.Enabled = true;
+            }
+            else if(opened && GrayScale)
+            {
+                GrayScale = false;
+                grayScaleButton.Text = "Gray Scale: OFF";
+                tempPicGray = canvas.Image;
+                canvas.Image = tempPic;
+                ColorPanel.Visible = true;
+                ColorPanel.Enabled = true;
+                GrayScalePanel.Visible = false;
+                GrayScalePanel.Enabled = false;
+            }
+            canvas.Refresh();
+        }
+
         bool penOn = true, rectOn = false;
         private void Pen_Click(object sender, EventArgs e)
         {
@@ -309,12 +451,16 @@ namespace RTX_Texture_Editor_for_Minecraft
             penOn = true;
             rectOn = false;
             penSize = penSizeTemp;
+            buttonFrame.Location = new Point(PenInside.Location.X - 12, PenInside.Location.Y - 12);
+            SelectedItem.Text = "Pen";
         }
         private void Rectangle_Click(object sender, EventArgs e)
         {
             eraserOn = false;
             penOn = false;
             rectOn = true;
+            buttonFrame.Location = new Point(RectangleInside.Location.X - 12, RectangleInside.Location.Y - 12);
+            SelectedItem.Text = "Rectangle";
         }
         private void Eraser_Click(object sender, EventArgs e)
         {
@@ -322,6 +468,8 @@ namespace RTX_Texture_Editor_for_Minecraft
             penOn = false;
             rectOn = false;
             penSize = 1;
+            buttonFrame.Location = new Point(EraserInside.Location.X - 12, EraserInside.Location.Y - 12);
+            SelectedItem.Text = "Eraser";
         }
         int recx, recy;
         private void canvas_MouseDown(object sender, MouseEventArgs e)
@@ -334,7 +482,10 @@ namespace RTX_Texture_Editor_for_Minecraft
                 SolidBrush eraser = new SolidBrush(eraserColor);
                 if ((penOn || rectOn) && !eraserOn) 
                 {
-                    myBrush.Color = Color.FromArgb(255, color);
+                    if (!GrayScale)
+                        myBrush.Color = Color.FromArgb(255, color);
+                    else
+                        myBrush.Color = grayColor;
                 }
                 else if (eraserOn)
                 {
@@ -354,13 +505,21 @@ namespace RTX_Texture_Editor_for_Minecraft
                         for (int j = (yAxis - (int)(penSize / 2)); j <= (yAxis + (int)(penSize / 2)); j++) 
                         {
                             if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
-                                pixel[i, j] = color;
+                            {
+                                if (GrayScale)
+                                    pixelGray[i, j] = grayColor;
+                                else
+                                    pixel[i, j] = color;
+                            }
                         }
                     }
                 }
                 else if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && eraserOn)
                 {
-                    pixel[xAxis, yAxis] = eraserColor;
+                    if (GrayScale)
+                        pixelGray[xAxis, yAxis] = eraserColor;
+                    else
+                        pixel[xAxis, yAxis] = eraserColor;
                 }
             }
             else if (opened && rectOn) 
@@ -380,7 +539,10 @@ namespace RTX_Texture_Editor_for_Minecraft
                 SolidBrush eraser = new SolidBrush(eraserColor);
                 if ((penOn || rectOn) && !eraserOn)
                 {
-                    myBrush.Color = Color.FromArgb(255, color);
+                    if (!GrayScale)
+                        myBrush.Color = Color.FromArgb(255, color);
+                    else
+                        myBrush.Color = grayColor;
                 }
                 else if (eraserOn)
                 {
@@ -401,13 +563,21 @@ namespace RTX_Texture_Editor_for_Minecraft
                             for (int j = (yAxis - (int)(penSize / 2)); j <= (yAxis + (int)(penSize / 2)); j++)
                             {
                                 if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
-                                    pixel[i, j] = color;
+                                {
+                                    if (GrayScale)
+                                        pixelGray[i, j] = grayColor;
+                                    else
+                                        pixel[i, j] = color;
+                                }
                             }
                         }
                     }
                     else if ((xAxis <= (canvas.Width / zoom) - 1 && yAxis <= (canvas.Height / zoom) - 1 && xAxis >= 0 && yAxis >= 0) && eraserOn)
                     {
-                        pixel[xAxis, yAxis] = eraserColor;
+                        if (GrayScale)
+                            pixelGray[xAxis, yAxis] = eraserColor;
+                        else
+                            pixel[xAxis, yAxis] = eraserColor;
                     }
                 }
                 if (rectOn)
@@ -434,14 +604,17 @@ namespace RTX_Texture_Editor_for_Minecraft
             }
         }
         private void canvas_MouseUp(object sender, MouseEventArgs e)
-        {
+        {   
             Refresh();
             cursorMoving = false;
             if (opened && rectOn)
             {
                 Color color = Color.FromArgb(M, E, R);
                 SolidBrush myBrush = new SolidBrush(color);
-                myBrush.Color = Color.FromArgb(255, color);
+                if (!GrayScale)
+                    myBrush.Color = Color.FromArgb(255, color);
+                else
+                    myBrush.Color = grayColor;
                 recx = e.X;
                 recy = e.Y;
                 int xAxis1 = (int)(cursorX * zoom * (float)Math.Pow(2, 5 - factor) * bm.Width / 16 / (float)(bm.Width * Math.Pow(2, factor - 1)));
@@ -458,7 +631,12 @@ namespace RTX_Texture_Editor_for_Minecraft
                         for (int j = yAxis1; j <= yAxis2; j++)
                         {
                             if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
-                                pixel[i, j] = color;
+                            {
+                                if (GrayScale)
+                                    pixelGray[i, j] = grayColor;
+                                else
+                                    pixel[i, j] = color;
+                            }
                         }
                     }
                 }
@@ -470,7 +648,12 @@ namespace RTX_Texture_Editor_for_Minecraft
                         for (int j = yAxis1; j <= yAxis2; j++)
                         {
                             if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
+                            {
+                                if (GrayScale)
+                                    pixelGray[i, j] = grayColor;
+                                else
                                 pixel[i, j] = color;
+                            }
                         }
                     }
                 }
@@ -482,7 +665,12 @@ namespace RTX_Texture_Editor_for_Minecraft
                         for (int j = yAxis2; j <= yAxis1; j++)
                         {
                             if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
+                            {
+                                if (GrayScale)
+                                    pixelGray[i, j] = grayColor;
+                                else
                                 pixel[i, j] = color;
+                            }
                         }
                     }
                 }
@@ -494,17 +682,35 @@ namespace RTX_Texture_Editor_for_Minecraft
                         for (int j = yAxis2; j <= yAxis1; j++)
                         {
                             if (i <= (canvas.Width / zoom) - 1 && j <= (canvas.Height / zoom) - 1 && i >= 0 && j >= 0)
-                                pixel[i, j] = color;
+                            {
+                                if (GrayScale)
+                                    pixelGray[i, j] = grayColor;
+                                else
+                                    pixel[i, j] = color;
+                            }
                         }
                     }
                 }
             }
             cursorX = -1;
             cursorY = -1;
+            if (GrayScale)
+            {
+                int temp = zoom;
+                zoom = 1;
+                using (var bitmap = new Bitmap(canvas.Width, canvas.Height))
+                {
+                    canvas.DrawToBitmap(bmpGray, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+                    zoom = temp;
+                    canvas.Size = new Size(zoom * x, zoom * y);
+                    canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                    canvas.Invalidate();
+                }
+            }
         }
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
-            if (file != null)
+            if (file != null && !GrayScale) 
             {
                 e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
                 e.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
@@ -527,10 +733,66 @@ namespace RTX_Texture_Editor_for_Minecraft
                 }
                 graphics = canvas.CreateGraphics();
             }
+            if (file != null && GrayScale)
+            {
+                e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+                e.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
+                e.Graphics.DrawImage(bm, 0, 0, canvas.Width, canvas.Height);
+                for (int i = 0; i < pixel.GetLength(0); i++)
+                {
+                    for (int j = 0; j < pixel.GetLength(1); j++)
+                    {
+                        if (!pixelGray[i, j].IsEmpty)
+                        {
+                            int xAxis = i;
+                            int yAxis = j;
+                            Point touch = new Point(xAxis * zoom, yAxis * zoom);
+                            Color color = pixelGray[i, j];
+                            SolidBrush myBrush = new SolidBrush(color);
+                            myBrush.Color = Color.FromArgb(255, color);
+                            e.Graphics.FillRectangle(myBrush, touch.X, touch.Y, file.Width * zoom / bm.Width, file.Height * zoom / bm.Height);
+                        }
+                    }
+                }
+                graphics = canvas.CreateGraphics();
+            }
         }
         Graphics graphics;
         Boolean cursorMoving = false;
         int cursorX = -1;
         int cursorY = -1;
+        public static Bitmap ToGrayscale(Bitmap bmp)
+        {
+            var result = new Bitmap(bmp.Width, bmp.Height, PixelFormat.Format8bppIndexed);
+
+            var resultPalette = result.Palette;
+
+            for (int i = 0; i < 256; i++)
+            {
+                resultPalette.Entries[i] = Color.FromArgb(255, i, i, i);
+            }
+
+            result.Palette = resultPalette;
+
+            BitmapData data = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
+            byte[] bytes = new byte[data.Height * data.Stride];
+            Marshal.Copy(data.Scan0, bytes, 0, bytes.Length);
+
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    var c = bmp.GetPixel(x, y);
+                    var rgb = (byte)((c.R + c.G + c.B) / 3);
+
+                    bytes[y * data.Stride + x] = rgb;
+                }
+            }
+            Marshal.Copy(bytes, 0, data.Scan0, bytes.Length);
+
+            result.UnlockBits(data);
+
+            return result;
+        }
     }
 }
