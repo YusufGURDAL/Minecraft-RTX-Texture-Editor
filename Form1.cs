@@ -19,24 +19,11 @@ namespace RTX_Texture_Editor_for_Minecraft
 {
     public partial class Form1 : Form
     {
-        public void abc()
-        {
-            var input = Console.ReadLine();
-            var py = Python.CreateEngine();
-            try {
-                py.Execute("print(" + input + ")");
-            }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message.ToString());
-            }
-
-        }
         public Form1()
         {
             InitializeComponent();
             this.panelCanvas.MouseWheel += PanelCanvas_MouseWheel;
-            var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\python\Python311\python.exe";
+            savePath = Settings.Default.SaveLocation;
         }
         int pixelX, pixelY;
         float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, def_valueG = 0.0f, Min = 0.0f, Max = 1.0f;
@@ -235,7 +222,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         Boolean opened = false;
         Color[,] pixel;
         Color[,] pixelGray;
-        string filePath="";
+        string filePath = "";
         void openImage()
         {
             DialogResult dr = openFileDialog1.ShowDialog();
@@ -269,7 +256,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             if (opened)
             {
-                if (folderSelected)
+                if (savePath != "")
                 {
                     int temp = zoom;
                     zoom = 1;
@@ -400,20 +387,20 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         bool GrayScale = false;
         bool firstTimeGray = true;
-        string savePath;
-        bool folderSelected = false;
+        string savePath = Settings.Default.SaveLocation;
         private void SaveLocButton_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog path = new FolderBrowserDialog();
             if (path.ShowDialog() == DialogResult.OK)
             {
                 savePath = path.SelectedPath;
-                folderSelected = true;
+                Settings.Default.SaveLocation = savePath;
+                Settings.Default.Save();
             }
         }
         private void createTextureSet_Click(object sender, EventArgs e)
         {
-            if (folderSelected)
+            if (savePath != "")
             {
                 if (opened)
                 {
@@ -429,8 +416,6 @@ namespace RTX_Texture_Editor_for_Minecraft
                                    "    }\n" +
                                    "}\n");
                     json.Close();
-                    MessageBox.Show("sdasdasd");
-                    abc();
                 }
                 else { MessageBox.Show("No image loaded, first upload an image. "); }
             }
