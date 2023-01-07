@@ -8,6 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IronPython" Version="3.4.0" />
+    <PackageReference Include="OpenCvSharp4" Version="4.6.0.20220608" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.6.0.20220608" />
+    <PackageReference Include="python" Version="3.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

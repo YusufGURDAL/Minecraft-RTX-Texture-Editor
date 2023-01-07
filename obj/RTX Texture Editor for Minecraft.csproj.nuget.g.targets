@@ -3,4 +3,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)mono.unix\7.1.0-final.1.21458.1\build\Mono.Unix.targets" Condition="Exists('$(NuGetPackageRoot)mono.unix\7.1.0-final.1.21458.1\build\Mono.Unix.targets')" />
+  </ImportGroup>
 </Project>

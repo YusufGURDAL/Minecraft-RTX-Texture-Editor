@@ -11,15 +11,32 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
+using AForge.Imaging.Filters;
+using IronPython.Hosting;
 
 namespace RTX_Texture_Editor_for_Minecraft
 {
     public partial class Form1 : Form
     {
+        public void abc()
+        {
+            var input = Console.ReadLine();
+            var py = Python.CreateEngine();
+            try {
+                py.Execute("print(" + input + ")");
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message.ToString());
+            }
+
+        }
         public Form1()
         {
             InitializeComponent();
             this.panelCanvas.MouseWheel += PanelCanvas_MouseWheel;
+            var psi = new ProcessStartInfo();
+            psi.FileName = @"C:\python\Python311\python.exe";
         }
         int pixelX, pixelY;
         float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, def_valueG = 0.0f, Min = 0.0f, Max = 1.0f;
@@ -212,9 +229,9 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             mouse = false;
         }
-        Image file;
-        Image tempPic;
-        Image tempPicGray;
+        System.Drawing.Image file;
+        System.Drawing.Image tempPic;
+        System.Drawing.Image tempPicGray;
         Boolean opened = false;
         Color[,] pixel;
         Color[,] pixelGray;
@@ -252,43 +269,49 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             if (opened)
             {
-                int temp = zoom;
-                zoom = 1;
-                canvas.Size = new Size(x, y);
-                canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
-                canvas.Invalidate();
-                string fileName = Path.GetFileName(filePath);
-                fileName = fileName.Substring(0, fileName.Length - 4);
-                if (!GrayScale)
-                    using (var bitmap = new Bitmap(canvas.Width, canvas.Height)) 
-                    {
-                    canvas.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
-                    bitmap.Save(@$"{savePath}\{fileName}_mer.png");
-                    zoom = temp;
-                    canvas.Size = new Size(zoom * x, zoom * y);
+                if (folderSelected)
+                {
+                    int temp = zoom;
+                    zoom = 1;
+                    canvas.Size = new Size(x, y);
                     canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
                     canvas.Invalidate();
-                    }
-                if (GrayScale)
-                {
-                    
-                    using (var bitmap = new Bitmap(canvas.Width, canvas.Height))
-                    {
-                        for (int i = 0; i <= canvas.Width - 1; i++)
+                    string fileName = Path.GetFileName(filePath);
+                    fileName = fileName.Substring(0, fileName.Length - 4);
+                    if (!GrayScale)
+                        using (var bitmap = new Bitmap(canvas.Width, canvas.Height))
                         {
-                            for (int j = 0; j <= canvas.Height - 1; j++)
-                            {
-                                bitmap.SetPixel(i, j, bmpGray.GetPixel(i, j));
-                            }
+                            canvas.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+                            bitmap.Save(@$"{savePath}\{fileName}_mer.png");
+                            zoom = temp;
+                            canvas.Size = new Size(zoom * x, zoom * y);
+                            canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                            canvas.Invalidate();
                         }
-                        var bitmap1 = ToGrayscale(bitmap);
-                        bitmap1.Save(@$"{savePath}\{fileName}_normal.png");
-                        zoom = temp;
-                        canvas.Size = new Size(zoom * x, zoom * y);
-                        canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
-                        canvas.Invalidate();
+                    if (GrayScale)
+                    {
+
+                        using (var bitmap = new Bitmap(canvas.Width, canvas.Height))
+                        {
+                            for (int i = 0; i <= canvas.Width - 1; i++)
+                            {
+                                for (int j = 0; j <= canvas.Height - 1; j++)
+                                {
+                                    bitmap.SetPixel(i, j, bmpGray.GetPixel(i, j));
+                                }
+                            }
+                            bitmap.Save(@$"{savePath}\{fileName}_normal.png",ImageFormat.Png);
+                            string image = @$"{savePath}\{fileName}_normal.png";
+                            OpenCvSharp.Mat grayScale = OpenCvSharp.Cv2.ImRead(image, OpenCvSharp.ImreadModes.Grayscale);
+                            OpenCvSharp.Cv2.ImWrite(@$"{savePath}\{fileName}_normal.png", grayScale);
+                            zoom = temp;
+                            canvas.Size = new Size(zoom * x, zoom * y);
+                            canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
+                            canvas.Invalidate();
+                        }
                     }
                 }
+                else { MessageBox.Show("Select a folder first. "); }
             }
             else { MessageBox.Show("No image loaded, first upload an image. "); }
         }
@@ -362,7 +385,6 @@ namespace RTX_Texture_Editor_for_Minecraft
                     pen_size.Text = "Pen size:\n" + penSizeTemp.ToString() + "\npixels";
             }
         }
-
         private void penSizeDown_Click(object sender, EventArgs e)
         {
             if (penSize - 2 > 0 && penOn)
@@ -379,14 +401,41 @@ namespace RTX_Texture_Editor_for_Minecraft
         bool GrayScale = false;
         bool firstTimeGray = true;
         string savePath;
-
+        bool folderSelected = false;
         private void SaveLocButton_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog path = new FolderBrowserDialog();
             if (path.ShowDialog() == DialogResult.OK)
+            {
                 savePath = path.SelectedPath;
+                folderSelected = true;
+            }
         }
-
+        private void createTextureSet_Click(object sender, EventArgs e)
+        {
+            if (folderSelected)
+            {
+                if (opened)
+                {
+                    string fileName = Path.GetFileName(filePath);
+                    fileName = fileName.Substring(0, fileName.Length - 4);
+                    TextWriter json = new StreamWriter(@$"{savePath}\{fileName}.texture_set.json");
+                    json.WriteLine("{\n" +
+                                   "    \"format_version\":\"1.16.100\",\n" +
+                                   "    \"minecraft:texture_set\":{\n" +
+                                   "       \"color\":" + "\"" + @$"{fileName}" + "\",\n" +
+                                   "       \"metalness_emissive_roughness\":" + "\"" + @$"{fileName}_mer" + "\",\n" +
+                                   "       \"heightmap\":" + "\"" + @$"{fileName}_normal" + "\"\n" +
+                                   "    }\n" +
+                                   "}\n");
+                    json.Close();
+                    MessageBox.Show("sdasdasd");
+                    abc();
+                }
+                else { MessageBox.Show("No image loaded, first upload an image. "); }
+            }
+            else { MessageBox.Show("Select a folder first. "); }
+        }
         Bitmap bmpGray;
         private void grayScaleButton_Click(object sender, EventArgs e)
         {
@@ -760,39 +809,6 @@ namespace RTX_Texture_Editor_for_Minecraft
         Graphics graphics;
         Boolean cursorMoving = false;
         int cursorX = -1;
-        int cursorY = -1;
-        public static Bitmap ToGrayscale(Bitmap bmp)
-        {
-            var result = new Bitmap(bmp.Width, bmp.Height, PixelFormat.Format8bppIndexed);
-
-            var resultPalette = result.Palette;
-
-            for (int i = 0; i < 256; i++)
-            {
-                resultPalette.Entries[i] = Color.FromArgb(255, i, i, i);
-            }
-
-            result.Palette = resultPalette;
-
-            BitmapData data = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
-            byte[] bytes = new byte[data.Height * data.Stride];
-            Marshal.Copy(data.Scan0, bytes, 0, bytes.Length);
-
-            for (int y = 0; y < bmp.Height; y++)
-            {
-                for (int x = 0; x < bmp.Width; x++)
-                {
-                    var c = bmp.GetPixel(x, y);
-                    var rgb = (byte)((c.R + c.G + c.B) / 3);
-
-                    bytes[y * data.Stride + x] = rgb;
-                }
-            }
-            Marshal.Copy(bytes, 0, data.Scan0, bytes.Length);
-
-            result.UnlockBits(data);
-
-            return result;
-        }
+        int cursorY = -1; 
     }
 }

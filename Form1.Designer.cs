@@ -74,6 +74,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.ColorPanel = new System.Windows.Forms.Panel();
             this.GrayScalePanel = new System.Windows.Forms.Panel();
             this.SaveLocButton = new System.Windows.Forms.Button();
+            this.createTextureSet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SliderE)).BeginInit();
             this.panelCanvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
@@ -454,7 +455,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.SelectedItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SelectedItem.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SelectedItem.ForeColor = System.Drawing.Color.White;
-            this.SelectedItem.Location = new System.Drawing.Point(117, 721);
+            this.SelectedItem.Location = new System.Drawing.Point(117, 747);
             this.SelectedItem.Name = "SelectedItem";
             this.SelectedItem.Size = new System.Drawing.Size(600, 40);
             this.SelectedItem.TabIndex = 35;
@@ -571,11 +572,22 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.SaveLocButton.Font = new System.Drawing.Font("Minecraft", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveLocButton.Location = new System.Drawing.Point(12, 638);
             this.SaveLocButton.Name = "SaveLocButton";
-            this.SaveLocButton.Size = new System.Drawing.Size(99, 110);
+            this.SaveLocButton.Size = new System.Drawing.Size(88, 81);
             this.SaveLocButton.TabIndex = 44;
             this.SaveLocButton.Text = "Select a folder";
             this.SaveLocButton.UseVisualStyleBackColor = true;
             this.SaveLocButton.Click += new System.EventHandler(this.SaveLocButton_Click);
+            // 
+            // createTextureSet
+            // 
+            this.createTextureSet.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.createTextureSet.Location = new System.Drawing.Point(117, 685);
+            this.createTextureSet.Name = "createTextureSet";
+            this.createTextureSet.Size = new System.Drawing.Size(600, 34);
+            this.createTextureSet.TabIndex = 45;
+            this.createTextureSet.Text = "Create .json file";
+            this.createTextureSet.UseVisualStyleBackColor = true;
+            this.createTextureSet.Click += new System.EventHandler(this.createTextureSet_Click);
             // 
             // Form1
             // 
@@ -583,6 +595,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1319, 823);
+            this.Controls.Add(this.createTextureSet);
             this.Controls.Add(this.SaveLocButton);
             this.Controls.Add(this.grayScaleButton);
             this.Controls.Add(this.SelectedItem);
@@ -681,6 +694,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         private System.Windows.Forms.Panel ColorPanel;
         private System.Windows.Forms.Panel GrayScalePanel;
         private System.Windows.Forms.Button SaveLocButton;
+        private System.Windows.Forms.Button createTextureSet;
     }
 }
 
