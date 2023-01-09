@@ -12,18 +12,55 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using AForge.Imaging.Filters;
-using IronPython.Hosting;
+using System.Drawing.Text;
 
 namespace RTX_Texture_Editor_for_Minecraft
 {
     public partial class Form1 : Form
     {
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
+        private PrivateFontCollection fonts = new PrivateFontCollection();
+        float scaleFactor;
         public Form1()
         {
             InitializeComponent();
             this.panelCanvas.MouseWheel += PanelCanvas_MouseWheel;
             savePath = Settings.Default.SaveLocation;
+            scaleFactor = 150f / CreateGraphics().DpiY;
+            createFont();
+            setFonts(scaleFactor);
+        }
+        private void createFont()
+        {
+            byte[] fontData = Properties.Resources.minecraft_font;
+            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+            Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.minecraft_font.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.minecraft_font.Length, IntPtr.Zero, ref dummy);
+            Marshal.FreeCoTaskMem(fontPtr);
+        }
+        private void setFonts(float factor)
+        {
+            grayScaleButton.Font = new Font(fonts.Families[0], 9.0F * factor);
+            penSizeUp.Font = new Font(fonts.Families[0], 9.0F * factor);
+            penSizeDown.Font = new Font(fonts.Families[0], 9.0F * factor);
+            pen_size.Font = new Font(fonts.Families[0], 9.0F * factor);
+            SaveLocButton.Font = new Font(fonts.Families[0], 8.0F * factor);
+            fileOpen.Font = new Font(fonts.Families[0], 9.0F * factor);
+            saveFile.Font = new Font(fonts.Families[0], 9.0F * factor);
+            createTextureSet.Font = new Font(fonts.Families[0], 9.0F * factor);
+            mVal.Font = new Font(fonts.Families[0], 11.0F * factor);
+            eVal.Font = new Font(fonts.Families[0], 11.0F * factor);
+            rVal.Font = new Font(fonts.Families[0], 11.0F * factor);
+            gVal.Font = new Font(fonts.Families[0], 11.0F * factor);
+            metalnessLabel.Font = new Font(fonts.Families[0], 10.0F * factor);
+            emissiveLabel.Font = new Font(fonts.Families[0], 10.0F * factor);
+            roughnessLabel.Font = new Font(fonts.Families[0], 10.0F * factor);
+            grayLabel.Font = new Font(fonts.Families[0], 10.0F * factor);
+            SelectedItem.Font = new Font(fonts.Families[0], 12.0F * factor);
+
         }
         int pixelX, pixelY;
         float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, def_valueG = 0.0f, Min = 0.0f, Max = 1.0f;

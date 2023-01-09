@@ -1,0 +1,44 @@
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\RTX Texture Editor for Minecraft.exe
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\RTX Texture Editor for Minecraft.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\RTX Texture Editor for Minecraft.deps.json
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\RTX Texture Editor for Minecraft.runtimeconfig.json
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\RTX Texture Editor for Minecraft.pdb
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\tr-TR\RTX Texture Editor for Minecraft.resources.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\Microsoft.Dynamic.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\Microsoft.Scripting.Metadata.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\Microsoft.Scripting.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\IronPython.Modules.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\IronPython.SQLite.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\IronPython.Wpf.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\IronPython.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\Mono.Unix.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\OpenCvSharp.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\android-arm\native\libMono.Unix.so
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\android-arm64\native\libMono.Unix.so
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\android-x64\native\libMono.Unix.so
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\android-x86\native\libMono.Unix.so
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\ios-arm\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\ios-arm64\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\ios-armv7s\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\iossimulator-arm64\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\iossimulator-x64\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\linux-arm\native\libMono.Unix.so
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\linux-arm64\native\libMono.Unix.so
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\linux-x64\native\libMono.Unix.so
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\maccatalyst-arm64\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\maccatalyst-x64\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\osx-arm64\native\libMono.Unix.dylib
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\osx-x64\native\libMono.Unix.dylib
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\tvos-arm64\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\tvossimulator-x64\native\libMono.Unix.a
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\win-x64\native\opencv_videoio_ffmpeg460_64.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\win-x86\native\OpenCvSharpExtern.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\runtimes\win-x86\native\opencv_videoio_ffmpeg460.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\AForge.Imaging.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\AForge.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\AForge.Math.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\AForge.Imaging.xml
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\AForge.xml
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Release\net5.0-windows\publish\AForge.Math.xml

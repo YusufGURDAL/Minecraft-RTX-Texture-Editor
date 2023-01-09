@@ -386,7 +386,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             // penSizeDown
             // 
             this.penSizeDown.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.penSizeDown.Location = new System.Drawing.Point(12, 590);
+            this.penSizeDown.Location = new System.Drawing.Point(12, 593);
             this.penSizeDown.Name = "penSizeDown";
             this.penSizeDown.Size = new System.Drawing.Size(88, 35);
             this.penSizeDown.TabIndex = 29;
@@ -401,7 +401,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.pen_size.ForeColor = System.Drawing.Color.White;
             this.pen_size.Location = new System.Drawing.Point(12, 492);
             this.pen_size.Name = "pen_size";
-            this.pen_size.Size = new System.Drawing.Size(88, 88);
+            this.pen_size.Size = new System.Drawing.Size(88, 98);
             this.pen_size.TabIndex = 30;
             this.pen_size.Text = "Pen\r\nsize:\r\n1\r\npixel";
             this.pen_size.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -591,8 +591,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1319, 823);
             this.Controls.Add(this.createTextureSet);
@@ -615,8 +614,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.Controls.Add(this.canvasPanelFrame);
             this.Controls.Add(this.ColorPanel);
             this.Controls.Add(this.GrayScalePanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "RTX Texture Editor for Minecraft - Version Beta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.SliderE)).EndInit();
             this.panelCanvas.ResumeLayout(false);
