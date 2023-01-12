@@ -244,7 +244,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.roughnessLabel.ForeColor = System.Drawing.Color.White;
             this.roughnessLabel.Location = new System.Drawing.Point(350, 669);
             this.roughnessLabel.Name = "roughnessLabel";
-            this.roughnessLabel.Size = new System.Drawing.Size(150, 26);
+            this.roughnessLabel.Size = new System.Drawing.Size(160, 26);
             this.roughnessLabel.TabIndex = 13;
             this.roughnessLabel.Text = "roughness";
             this.roughnessLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
