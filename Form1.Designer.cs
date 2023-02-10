@@ -614,7 +614,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.Controls.Add(this.canvasPanelFrame);
             this.Controls.Add(this.ColorPanel);
             this.Controls.Add(this.GrayScalePanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "RTX Texture Editor for Minecraft - Version Beta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
