@@ -3,7 +3,7 @@ using System;
 
 namespace RTX_Texture_Editor_for_Minecraft
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,7 +31,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.Eraser = new System.Windows.Forms.Button();
             this.SliderE = new System.Windows.Forms.PictureBox();
             this.fileOpen = new System.Windows.Forms.Button();
@@ -75,6 +75,8 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.GrayScalePanel = new System.Windows.Forms.Panel();
             this.SaveLocButton = new System.Windows.Forms.Button();
             this.createTextureSet = new System.Windows.Forms.Button();
+            this.undoButton = new System.Windows.Forms.Button();
+            this.redoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SliderE)).BeginInit();
             this.panelCanvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
@@ -569,8 +571,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // SaveLocButton
             // 
+            this.SaveLocButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveLocButton.Font = new System.Drawing.Font("Minecraft", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SaveLocButton.Location = new System.Drawing.Point(12, 638);
+            this.SaveLocButton.Location = new System.Drawing.Point(12, 685);
             this.SaveLocButton.Name = "SaveLocButton";
             this.SaveLocButton.Size = new System.Drawing.Size(88, 81);
             this.SaveLocButton.TabIndex = 44;
@@ -580,6 +583,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // createTextureSet
             // 
+            this.createTextureSet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.createTextureSet.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.createTextureSet.Location = new System.Drawing.Point(117, 685);
             this.createTextureSet.Name = "createTextureSet";
@@ -589,11 +593,35 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.createTextureSet.UseVisualStyleBackColor = true;
             this.createTextureSet.Click += new System.EventHandler(this.createTextureSet_Click);
             // 
-            // Form1
+            // undoButton
+            // 
+            this.undoButton.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.undoButton.Location = new System.Drawing.Point(12, 639);
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(42, 35);
+            this.undoButton.TabIndex = 46;
+            this.undoButton.Text = "<";
+            this.undoButton.UseVisualStyleBackColor = true;
+            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
+            // 
+            // redoButton
+            // 
+            this.redoButton.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.redoButton.Location = new System.Drawing.Point(58, 639);
+            this.redoButton.Name = "redoButton";
+            this.redoButton.Size = new System.Drawing.Size(42, 35);
+            this.redoButton.TabIndex = 47;
+            this.redoButton.Text = ">";
+            this.redoButton.UseVisualStyleBackColor = true;
+            this.redoButton.Click += new System.EventHandler(this.redoButton_Click);
+            // 
+            // Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1319, 823);
+            this.Controls.Add(this.redoButton);
+            this.Controls.Add(this.undoButton);
             this.Controls.Add(this.createTextureSet);
             this.Controls.Add(this.SaveLocButton);
             this.Controls.Add(this.grayScaleButton);
@@ -617,9 +645,10 @@ namespace RTX_Texture_Editor_for_Minecraft
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Name = "Form";
             this.Text = "RTX Texture Editor for Minecraft - Version Beta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.SliderE)).EndInit();
             this.panelCanvas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
@@ -697,6 +726,8 @@ namespace RTX_Texture_Editor_for_Minecraft
         private System.Windows.Forms.Panel GrayScalePanel;
         private System.Windows.Forms.Button SaveLocButton;
         private System.Windows.Forms.Button createTextureSet;
+        private System.Windows.Forms.Button undoButton;
+        private System.Windows.Forms.Button redoButton;
     }
 }
 

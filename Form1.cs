@@ -16,13 +16,13 @@ using System.Drawing.Text;
 
 namespace RTX_Texture_Editor_for_Minecraft
 {
-    public partial class Form1 : Form
+    public partial class Form : System.Windows.Forms.Form
     {
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
         private PrivateFontCollection fonts = new PrivateFontCollection();
         float scaleFactor;
-        public Form1()
+        public Form()
         {
             InitializeComponent();
             this.panelCanvas.MouseWheel += PanelCanvas_MouseWheel;
@@ -30,7 +30,13 @@ namespace RTX_Texture_Editor_for_Minecraft
             scaleFactor = 150f / CreateGraphics().DpiY;
             createFont();
             setFonts(scaleFactor);
+            undoButton.Enabled = false;
+            redoButton.Enabled = false;
         }
+        Stack<Color[,]> undoNormal = new Stack<Color[,]>();
+        Stack<Color[,]> undoGray = new Stack<Color[,]>();
+        Stack<Color[,]> redoNormal = new Stack<Color[,]>();
+        Stack<Color[,]> redoGray = new Stack<Color[,]>();
         private void createFont()
         {
             byte[] fontData = Properties.Resources.minecraft_font;
@@ -60,7 +66,8 @@ namespace RTX_Texture_Editor_for_Minecraft
             roughnessLabel.Font = new Font(fonts.Families[0], 10.0F * factor);
             grayLabel.Font = new Font(fonts.Families[0], 10.0F * factor);
             SelectedItem.Font = new Font(fonts.Families[0], 12.0F * factor);
-
+            undoButton.Font = new Font(fonts.Families[0], 9.0F * factor);
+            redoButton.Font = new Font(fonts.Families[0], 9.0F * factor);
         }
         int pixelX, pixelY;
         float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, def_valueG = 0.0f, Min = 0.0f, Max = 1.0f;
@@ -121,12 +128,10 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             return Min + (Max - Min) * y / (float)(SliderE.Height);
         }
-        Image sliderButton1, sliderButton2, sliderButton3, sliderButton4;
         float slidery;
         bool mouse = false;
         private void Slider_PaintM(object sender, PaintEventArgs e)
         {
-            sliderButton1 = sliderButtonPicM.Image;
             Bitmap bmpSld = new Bitmap(sliderButtonPicM.Image);
             float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
@@ -158,7 +163,6 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Slider_PaintE(object sender, PaintEventArgs e)
         {
-            sliderButton2 = sliderButtonPicE.Image;
             Bitmap bmpSld = new Bitmap(sliderButtonPicE.Image);
             float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
@@ -190,7 +194,6 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Slider_PaintR(object sender, PaintEventArgs e)
         {
-            sliderButton3 = sliderButtonPicR.Image;
             Bitmap bmpSld = new Bitmap(sliderButtonPicR.Image);
             float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
@@ -222,7 +225,6 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Slider_PaintG(object sender, PaintEventArgs e)
         {
-            sliderButton4 = sliderButtonPicG.Image;
             Bitmap bmpSld = new Bitmap(sliderButtonPicG.Image);
             float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
@@ -253,9 +255,9 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             mouse = false;
         }
-        System.Drawing.Image file;
-        System.Drawing.Image tempPic;
-        System.Drawing.Image tempPicGray;
+        Image file;
+        Image tempPic;
+        Image tempPicGray;
         Boolean opened = false;
         Color[,] pixel;
         Color[,] pixelGray;
@@ -275,7 +277,6 @@ namespace RTX_Texture_Editor_for_Minecraft
                 y = canvas.Height;
                 canvas.Location = new Point((panelCanvas.Width - x) / 2, (panelCanvas.Height - y) / 2);
                 bm = new Bitmap(canvas.Image);
-                bm_size = bm.Size;
                 zoom = 1;
                 factor = 1;
                 limit = 64;
@@ -283,10 +284,16 @@ namespace RTX_Texture_Editor_for_Minecraft
                 pixelY = y;
                 pixel = new Color[pixelX, pixelY];
                 pixelGray = new Color[pixelX, pixelY];
+                undoNormal.Clear();
+                redoNormal.Clear();
+                var tempP = (Color[,])pixel.Clone();
+                undoNormal.Push(tempP);
                 firstTime = true;
                 firstTimeGray = true;
                 GrayScale = false;
                 grayScaleButton.Text = "Gray Scale: OFF";
+                undoButton.Enabled = false;
+                redoButton.Enabled = false;
             }
         }
         void saveImage()
@@ -353,7 +360,6 @@ namespace RTX_Texture_Editor_for_Minecraft
             openImage();
         }
         Bitmap bm;
-        Size bm_size;
         int zoom = 1, limit, x, y, factor = 1;
         int M, E, R, G;
         Color grayColor = Color.FromArgb(0, 0, 0);
@@ -514,7 +520,81 @@ namespace RTX_Texture_Editor_for_Minecraft
             }
             canvas.Refresh();
         }
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            redoNormal.Push(undoNormal.Pop());
+            var v = (Color[,])undoNormal.Peek().Clone();
+            pixel = v;
+            canvas.Invalidate();
+            if (undoNormal.Count == 1)
+                undoButton.Enabled = false;
+        }
+        private void undoButton_Click(object sender, EventArgs e)
+        {
+            redoNormal.Push(undoNormal.Pop());
+            if (undoNormal.Count > 0)
+            {
+                var v = (Color[,])undoNormal.Peek().Clone();
+                pixel = v;
+            }
+            if (undoNormal.Count == 1)
+                undoButton.Enabled = false;
+            redoButton.Enabled = true;
+            canvas.Invalidate();
+        }
+        private void redoButton_Click(object sender, EventArgs e)
+        {
+            if (redoNormal.Count > 0)
+            {
+                var v = (Color[,])redoNormal.Peek().Clone();
+                pixel = v;
+                undoNormal.Push(redoNormal.Pop());
+            }
+            if (redoNormal.Count == 0) 
+                redoButton.Enabled = false;
+            if (undoNormal.Count > 1)
+                undoButton.Enabled = true;
+            canvas.Invalidate();
+        }
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true) {
+                switch (e.KeyCode)
+                {
+                    case Keys.Z:
+                        undoButton.PerformClick();
+                        break;
+                    case Keys.Y:
+                        redoButton.PerformClick();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            switch (e.KeyCode)
+            {
+                case Keys.D1:
+                    Eraser.PerformClick();
+                    break;
+                case Keys.D2:
+                    Pen.PerformClick();
+                    break;
+                case Keys.D3:
+                    Rectangle.PerformClick();
+                    break;
+                case Keys.E:
+                    Eraser.PerformClick();
+                    break;
+                case Keys.P:
+                    Pen.PerformClick();
+                    break;
+                case Keys.R:
+                    Rectangle.PerformClick();
+                    break;
+                default:
+                    break;
+            }
+        }
         bool penOn = true, rectOn = false;
         private void Pen_Click(object sender, EventArgs e)
         {
@@ -545,6 +625,8 @@ namespace RTX_Texture_Editor_for_Minecraft
         int recx, recy;
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
+            redoNormal.Clear();
+            redoButton.Enabled = false;
             if (opened && (penOn || eraserOn))
             {
                 Color color = Color.FromArgb(M, E, R);
@@ -608,7 +690,7 @@ namespace RTX_Texture_Editor_for_Minecraft
                 Color eraserColor = Color.FromArgb(255, 255, 255);
                 SolidBrush myBrush = new SolidBrush(color);
                 SolidBrush eraser = new SolidBrush(eraserColor);
-                if ((penOn || rectOn) && !eraserOn)
+                if (penOn && !eraserOn)
                 {
                     if (!GrayScale)
                         myBrush.Color = Color.FromArgb(255, color);
@@ -723,7 +805,7 @@ namespace RTX_Texture_Editor_for_Minecraft
                                 if (GrayScale)
                                     pixelGray[i, j] = grayColor;
                                 else
-                                pixel[i, j] = color;
+                                    pixel[i, j] = color;
                             }
                         }
                     }
@@ -740,7 +822,7 @@ namespace RTX_Texture_Editor_for_Minecraft
                                 if (GrayScale)
                                     pixelGray[i, j] = grayColor;
                                 else
-                                pixel[i, j] = color;
+                                    pixel[i, j] = color;
                             }
                         }
                     }
@@ -762,6 +844,12 @@ namespace RTX_Texture_Editor_for_Minecraft
                         }
                     }
                 }
+                if (!GrayScale)
+                {
+                    var tempP = (Color[,])pixel.Clone();
+                    undoNormal.Push(tempP);
+                    undoButton.Enabled = true;
+                }
             }
             cursorX = -1;
             cursorY = -1;
@@ -777,6 +865,12 @@ namespace RTX_Texture_Editor_for_Minecraft
                     canvas.Location = new Point((panelCanvas.Size.Width - canvas.Width) / 2, (panelCanvas.Size.Height - canvas.Height) / 2);
                     canvas.Invalidate();
                 }
+            }
+            if (opened && !GrayScale && (penOn || eraserOn)) 
+            {
+                var tempP = (Color[,])pixel.Clone();
+                undoNormal.Push(tempP);
+                undoButton.Enabled = true;
             }
         }
         private void canvas_Paint(object sender, PaintEventArgs e)
@@ -827,9 +921,11 @@ namespace RTX_Texture_Editor_for_Minecraft
                 }
                 graphics = canvas.CreateGraphics();
             }
+            mVal.Text=undoNormal.Count.ToString();
+            eVal.Text = redoNormal.Count.ToString();
         }
         Graphics graphics;
-        Boolean cursorMoving = false;
+        Boolean cursorMoving = false; 
         int cursorX = -1;
         int cursorY = -1; 
     }
