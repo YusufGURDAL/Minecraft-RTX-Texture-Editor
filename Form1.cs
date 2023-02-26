@@ -934,8 +934,6 @@ namespace RTX_Texture_Editor_for_Minecraft
                 }
                 graphics = canvas.CreateGraphics();
             }
-            mVal.Text=undoNormal.Count.ToString();
-            eVal.Text = redoNormal.Count.ToString();
         }
         Graphics graphics;
         Boolean cursorMoving = false; 
