@@ -30,6 +30,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             scaleFactor = 150f / CreateGraphics().DpiY;
             createFont();
             setFonts(scaleFactor);
+            textColor(Color.FromArgb(76, 76, 76));
             undoButton.Enabled = false;
             redoButton.Enabled = false;
         }
@@ -68,6 +69,18 @@ namespace RTX_Texture_Editor_for_Minecraft
             SelectedItem.Font = new Font(fonts.Families[0], 12.0F * factor);
             undoButton.Font = new Font(fonts.Families[0], 9.0F * factor);
             redoButton.Font = new Font(fonts.Families[0], 9.0F * factor);
+        }
+        private void textColor(Color c)
+        {
+            penSizeUp.ForeColor = c;
+            penSizeDown.ForeColor = c;
+            saveFile.ForeColor = c;
+            fileOpen.ForeColor = c;
+            SaveLocButton.ForeColor = c;
+            createTextureSet.ForeColor = c;
+            undoButton.ForeColor = c;
+            redoButton.ForeColor = c;
+            grayScaleButton.ForeColor = c;
         }
         int pixelX, pixelY;
         float def_valueM = 0.0f, def_valueE = 0.0f, def_valueR = 0.0f, def_valueG = 0.0f, Min = 0.0f, Max = 1.0f;

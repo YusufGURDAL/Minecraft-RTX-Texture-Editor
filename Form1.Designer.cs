@@ -127,7 +127,10 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // fileOpen
             // 
+            this.fileOpen.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._296x40_button;
             this.fileOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fileOpen.FlatAppearance.BorderSize = 0;
+            this.fileOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fileOpen.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fileOpen.Location = new System.Drawing.Point(117, 638);
             this.fileOpen.Name = "fileOpen";
@@ -144,7 +147,10 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // saveFile
             // 
+            this.saveFile.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._296x40_button;
             this.saveFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveFile.FlatAppearance.BorderSize = 0;
+            this.saveFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveFile.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.saveFile.Location = new System.Drawing.Point(421, 638);
             this.saveFile.Name = "saveFile";
@@ -376,6 +382,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // penSizeUp
             // 
+            this.penSizeUp.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._88x35_button;
+            this.penSizeUp.FlatAppearance.BorderSize = 0;
+            this.penSizeUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.penSizeUp.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.penSizeUp.Location = new System.Drawing.Point(12, 452);
             this.penSizeUp.Name = "penSizeUp";
@@ -387,6 +396,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // penSizeDown
             // 
+            this.penSizeDown.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._88x35_button;
+            this.penSizeDown.FlatAppearance.BorderSize = 0;
+            this.penSizeDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.penSizeDown.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.penSizeDown.Location = new System.Drawing.Point(12, 593);
             this.penSizeDown.Name = "penSizeDown";
@@ -466,6 +478,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             // grayScaleButton
             // 
             this.grayScaleButton.BackColor = System.Drawing.SystemColors.Control;
+            this.grayScaleButton.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._88x160_button;
+            this.grayScaleButton.FlatAppearance.BorderSize = 0;
+            this.grayScaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grayScaleButton.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grayScaleButton.Location = new System.Drawing.Point(12, 286);
             this.grayScaleButton.Name = "grayScaleButton";
@@ -571,7 +586,10 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // SaveLocButton
             // 
+            this.SaveLocButton.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._88x81_button;
             this.SaveLocButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveLocButton.FlatAppearance.BorderSize = 0;
+            this.SaveLocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveLocButton.Font = new System.Drawing.Font("Minecraft", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveLocButton.Location = new System.Drawing.Point(12, 685);
             this.SaveLocButton.Name = "SaveLocButton";
@@ -583,11 +601,14 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // createTextureSet
             // 
+            this.createTextureSet.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._600x40_button;
             this.createTextureSet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.createTextureSet.FlatAppearance.BorderSize = 0;
+            this.createTextureSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTextureSet.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.createTextureSet.Location = new System.Drawing.Point(117, 685);
             this.createTextureSet.Name = "createTextureSet";
-            this.createTextureSet.Size = new System.Drawing.Size(600, 34);
+            this.createTextureSet.Size = new System.Drawing.Size(600, 40);
             this.createTextureSet.TabIndex = 45;
             this.createTextureSet.Text = "Create .json file";
             this.createTextureSet.UseVisualStyleBackColor = true;
@@ -595,6 +616,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // undoButton
             // 
+            this.undoButton.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._42x35_button;
+            this.undoButton.FlatAppearance.BorderSize = 0;
+            this.undoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.undoButton.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.undoButton.Location = new System.Drawing.Point(12, 639);
             this.undoButton.Name = "undoButton";
@@ -606,6 +630,9 @@ namespace RTX_Texture_Editor_for_Minecraft
             // 
             // redoButton
             // 
+            this.redoButton.BackgroundImage = global::RTX_Texture_Editor_for_Minecraft.Properties.Resources._42x35_button;
+            this.redoButton.FlatAppearance.BorderSize = 0;
+            this.redoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.redoButton.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.redoButton.Location = new System.Drawing.Point(58, 639);
             this.redoButton.Name = "redoButton";
