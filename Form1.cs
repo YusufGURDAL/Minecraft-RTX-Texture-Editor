@@ -141,25 +141,22 @@ namespace RTX_Texture_Editor_for_Minecraft
         {
             return Min + (Max - Min) * y / (float)(SliderE.Height);
         }
-        float slidery;
+        float sliderM, sliderE, sliderR, sliderG;
         bool mouse = false;
         private void Slider_PaintM(object sender, PaintEventArgs e)
         {
-            Bitmap bmpSld = new Bitmap(sliderButtonPicM.Image);
-            float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
-            slidery = SliderM.Height - BarM(def_valueM);
-            int x = (int)(SliderM.Width * bar_size);
+            sliderM = SliderM.Height - BarM(def_valueM);
             e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderM.Height);
             e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderM.Height - 6);
-            sliderButtonPicM.Location = new Point(SliderM.Location.X, (int)(slidery + SliderM.Location.Y - sliderButtonPicM.Height));
-            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderM.Height - slidery - 3);
+            sliderButtonPicM.Location = new Point(SliderM.Location.X, (int)(sliderM + SliderM.Location.Y - sliderButtonPicM.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, sliderM, 27, SliderM.Height - sliderM - 3);
         }
         private void Slider_MouseDownM(object sender, MouseEventArgs e)
         {
             mouse = true;
             thumbM(Slider_height(SliderM.Height - e.Y));
-            M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
+            M = (int)((SliderM.Height - sliderM) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
             mVal.Text = M.ToString();
         }
         private void Slider_MouseMoveM(object sender, MouseEventArgs e)
@@ -167,7 +164,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             if (!mouse)
                 return;
             thumbM(Slider_height(SliderM.Height - e.Y));
-            M = (int)((SliderM.Height - slidery) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
+            M = (int)((SliderM.Height - sliderM) / (SliderM.Height - sliderButtonPicM.Height + 3) * 255);
             mVal.Text = M.ToString();
         }
         private void Slider_MouseUpM(object sender, MouseEventArgs e)
@@ -176,21 +173,18 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Slider_PaintE(object sender, PaintEventArgs e)
         {
-            Bitmap bmpSld = new Bitmap(sliderButtonPicE.Image);
-            float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
-            slidery = SliderE.Height-BarE(def_valueE);
-            int x = (int)(SliderE.Width * bar_size);
+            sliderE = SliderE.Height-BarE(def_valueE);
             e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderE.Height);
             e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderE.Height - 6);
-            sliderButtonPicE.Location = new Point(SliderE.Location.X,(int) (slidery+ SliderE.Location.Y - sliderButtonPicE.Height));
-            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderE.Height-slidery-3);
+            sliderButtonPicE.Location = new Point(SliderE.Location.X,(int) (sliderE + SliderE.Location.Y - sliderButtonPicE.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, sliderE, 27, SliderE.Height- sliderE - 3);
         }
         private void Slider_MouseDownE(object sender, MouseEventArgs e)
         {
             mouse = true;
             thumbE(Slider_height(SliderE.Height - e.Y));
-            E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
+            E = (int)((SliderE.Height - sliderE) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
             eVal.Text = E.ToString();
         }
         private void Slider_MouseMoveE(object sender, MouseEventArgs e)
@@ -198,7 +192,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             if (!mouse)
                 return;
             thumbE(Slider_height(SliderE.Height - e.Y));
-            E = (int)((SliderE.Height - slidery) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
+            E = (int)((SliderE.Height - sliderE) / (SliderE.Height - sliderButtonPicE.Height + 3) * 255);
             eVal.Text = E.ToString();
         }
         private void Slider_MouseUpE(object sender, MouseEventArgs e)
@@ -207,21 +201,18 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Slider_PaintR(object sender, PaintEventArgs e)
         {
-            Bitmap bmpSld = new Bitmap(sliderButtonPicR.Image);
-            float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
-            slidery = SliderR.Height - BarE(def_valueR);
-            int x = (int)(SliderR.Width * bar_size);
+            sliderR = SliderR.Height - BarE(def_valueR);
             e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderR.Height);
             e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderR.Height - 6);
-            sliderButtonPicR.Location = new Point(SliderR.Location.X, (int)(slidery + SliderR.Location.Y - sliderButtonPicR.Height));
-            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderR.Height - slidery - 3);
+            sliderButtonPicR.Location = new Point(SliderR.Location.X, (int)(sliderR + SliderR.Location.Y - sliderButtonPicR.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, sliderR, 27, SliderR.Height - sliderR - 3);
         }
         private void Slider_MouseDownR(object sender, MouseEventArgs e)
         {
             mouse = true;
             thumbR(Slider_height(SliderR.Height - e.Y));
-            R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
+            R = (int)((SliderR.Height - sliderR) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
             rVal.Text = R.ToString();
         }
         private void Slider_MouseMoveR(object sender, MouseEventArgs e)
@@ -229,7 +220,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             if (!mouse)
                 return;
             thumbR(Slider_height(SliderR.Height - e.Y));
-            R = (int)((SliderR.Height - slidery) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
+            R = (int)((SliderR.Height - sliderR) / (SliderR.Height - sliderButtonPicR.Height + 3) * 255);
             rVal.Text = R.ToString();
         }
         private void Slider_MouseUpR(object sender, MouseEventArgs e)
@@ -238,21 +229,18 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Slider_PaintG(object sender, PaintEventArgs e)
         {
-            Bitmap bmpSld = new Bitmap(sliderButtonPicG.Image);
-            float bar_size = 0.5f;
             Color sliderEmptyColor = Color.FromArgb(64, 64, 64);
-            slidery = SliderG.Height - BarG(def_valueG);
-            int x = (int)(SliderG.Width * bar_size);
+            sliderG = SliderG.Height - BarG(def_valueG);
             e.Graphics.FillRectangle(Brushes.Black, 8, 0, 33, SliderG.Height);
             e.Graphics.FillRectangle(new SolidBrush(sliderEmptyColor), 11, 3, 27, SliderG.Height - 6);
-            sliderButtonPicG.Location = new Point(SliderG.Location.X, (int)(slidery + SliderG.Location.Y - sliderButtonPicG.Height));
-            e.Graphics.FillRectangle(Brushes.LightGray, 11, slidery, 27, SliderG.Height - slidery - 3);
+            sliderButtonPicG.Location = new Point(SliderG.Location.X, (int)(sliderG + SliderG.Location.Y - sliderButtonPicG.Height));
+            e.Graphics.FillRectangle(Brushes.LightGray, 11, sliderG, 27, SliderG.Height - sliderG - 3);
         }
         private void Slider_MouseDownG(object sender, MouseEventArgs e)
         {
             mouse = true;
             thumbG(Slider_height(SliderG.Height - e.Y));
-            G = (int)((SliderG.Height - slidery) / (SliderG.Height - sliderButtonPicG.Height + 3) * 255);
+            G = (int)((SliderG.Height - sliderG) / (SliderG.Height - sliderButtonPicG.Height + 3) * 255);
             gVal.Text = G.ToString();
         }
         private void Slider_MouseMoveG(object sender, MouseEventArgs e)
@@ -260,7 +248,7 @@ namespace RTX_Texture_Editor_for_Minecraft
             if (!mouse)
                 return;
             thumbG(Slider_height(SliderG.Height - e.Y));
-            G = (int)((SliderG.Height - slidery) / (SliderG.Height - sliderButtonPicG.Height + 3) * 255);
+            G = (int)((SliderG.Height - sliderG) / (SliderG.Height - sliderButtonPicG.Height + 3) * 255);
             grayColor = Color.FromArgb(G, G, G);
             gVal.Text = G.ToString();
         }
@@ -580,6 +568,9 @@ namespace RTX_Texture_Editor_for_Minecraft
                     case Keys.Y:
                         redoButton.PerformClick();
                         break;
+                    case Keys.S:
+                        saveFile.PerformClick();
+                        break;
                     default:
                         break;
                 }
@@ -607,10 +598,38 @@ namespace RTX_Texture_Editor_for_Minecraft
                 default:
                     break;
             }
+            if (e.Alt) 
+            {
+                if (penOn)
+                    tempPen = true;
+                if (eraserOn)
+                    tempEraser = true;
+                if (rectOn)
+                    tempRect = true;
+                penOn = false;
+                rectOn = false;
+                eraserOn = false;
+                colorPickerOn = true;
+            }
         }
-        bool penOn = true, rectOn = false;
+        bool tempPen, tempRect, tempEraser;
+        private void Form_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (tempPen)
+                Pen.PerformClick();
+            if (tempEraser)
+                Eraser.PerformClick();
+            if (tempRect)
+                Rectangle.PerformClick();
+            tempPen = false;
+            tempEraser = false;
+            tempRect = false;
+        }
+
+        bool penOn = true, rectOn = false, colorPickerOn = false;
         private void Pen_Click(object sender, EventArgs e)
         {
+            colorPickerOn = false;
             eraserOn = false;
             penOn = true;
             rectOn = false;
@@ -620,6 +639,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Rectangle_Click(object sender, EventArgs e)
         {
+            colorPickerOn = false;
             eraserOn = false;
             penOn = false;
             rectOn = true;
@@ -628,6 +648,7 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void Eraser_Click(object sender, EventArgs e)
         {
+            colorPickerOn = false;
             eraserOn = true;
             penOn = false;
             rectOn = false;
@@ -638,6 +659,20 @@ namespace RTX_Texture_Editor_for_Minecraft
         int recx, recy;
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
+            if (opened && colorPickerOn)
+            {
+                using (Bitmap bitmap = new Bitmap(canvas.Width, canvas.Height))
+                {
+                    canvas.DrawToBitmap(bitmap, new Rectangle(0, 0, canvas.Width, canvas.Height));
+                    M = bitmap.GetPixel(e.X, e.Y).R;
+                    E = bitmap.GetPixel(e.X, e.Y).G;
+                    R = bitmap.GetPixel(e.X, e.Y).B;
+                }
+                thumbM(Slider_height(SliderM.Height - (int)(((float)(255 - M) / 255) * (float)SliderM.Height)));
+                thumbE(Slider_height(SliderE.Height - (int)(((float)(255 - E) / 255) * (float)SliderE.Height)));
+                thumbR(Slider_height(SliderR.Height - (int)(((float)(255 - R) / 255) * (float)SliderR.Height)));
+                thumbG(Slider_height(SliderG.Height - (int)(((float)(255 - G) / 255) * (float)SliderG.Height)));
+            }
             redoNormal.Clear();
             redoButton.Enabled = false;
             if (opened && (penOn || eraserOn))
@@ -697,6 +732,20 @@ namespace RTX_Texture_Editor_for_Minecraft
         }
         private void canvas_MouseMove(object sender, MouseEventArgs e)
         {
+            if (opened && colorPickerOn && e.X > -1 && e.X < bm.Width * zoom && e.Y > -1 && e.Y < bm.Height * zoom)    
+            {
+                using (Bitmap bitmap = new Bitmap(canvas.Width, canvas.Height))
+                {
+                    canvas.DrawToBitmap(bitmap, new Rectangle(0, 0, canvas.Width, canvas.Height));
+                    M = bitmap.GetPixel(e.X, e.Y).R;
+                    E = bitmap.GetPixel(e.X, e.Y).G;
+                    R = bitmap.GetPixel(e.X, e.Y).B;
+                }
+                thumbM(Slider_height(SliderM.Height - (int)(((float)(255 - M) / 255) * (float)SliderM.Height)));
+                thumbE(Slider_height(SliderE.Height - (int)(((float)(255 - E) / 255) * (float)SliderE.Height)));
+                thumbR(Slider_height(SliderR.Height - (int)(((float)(255 - R) / 255) * (float)SliderR.Height)));
+                thumbG(Slider_height(SliderG.Height - (int)(((float)(255 - G) / 255) * (float)SliderG.Height)));
+            }
             if (cursorX != -1 && cursorY != -1 && cursorMoving && opened && (penOn || eraserOn || rectOn)) 
             {
                 Color color = Color.FromArgb(M, E, R);
