@@ -27,3 +27,7 @@ C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor 
 C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\net5.0-windows\RTX Texture Editor for Minecraft.genruntimeconfig.cache
 C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\net5.0-windows\RTX_Texture_Editor_for_Minecraft.Form.resources
 C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\obj\Debug\net5.0-windows\RTX_Texture_Editor_for_Minecraft.Form.tr-TR.resources
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\net5.0-windows\Numpy.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\net5.0-windows\Python.Deployment.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\net5.0-windows\Python.Included.dll
+C:\Users\yusuf\source\repos\RTX Texture Editor for Minecraft\RTX Texture Editor for Minecraft\bin\Debug\net5.0-windows\Python.Runtime.dll

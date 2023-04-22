@@ -1,13 +1,28 @@
 {
   "version": 2,
-  "dgSpecHash": "R2ev5JeHJDfXZaGU9f/PCW4/td1GnGplpjVg/AJ1XUjzomCfsLE/XHxJxjrYSALy9fCpwTy0XQ7Wluo/bG415g==",
+  "dgSpecHash": "vS+E69vl1O8EWZgUhPL0x3Soq+pN1tw6Rd/HurdUHWGx5WuPKsYNWMf+yo/pphNIY0+hn/CxYN7f2VU2LWcmrw==",
   "success": true,
   "projectFilePath": "C:\\Users\\yusuf\\source\\repos\\RTX Texture Editor for Minecraft\\RTX Texture Editor for Minecraft\\RTX Texture Editor for Minecraft.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\yusuf\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\numpy\\3.11.1.33\\numpy.3.11.1.33.nupkg.sha512",
     "C:\\Users\\yusuf\\.nuget\\packages\\opencvsharp4\\4.6.0.20220608\\opencvsharp4.4.6.0.20220608.nupkg.sha512",
     "C:\\Users\\yusuf\\.nuget\\packages\\opencvsharp4.runtime.win\\4.6.0.20220608\\opencvsharp4.runtime.win.4.6.0.20220608.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\python.deployment\\2.0.0\\python.deployment.2.0.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\python.included\\3.11.1\\python.included.3.11.1.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\pythonnet\\3.0.1\\pythonnet.3.0.1.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\yusuf\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\yusuf\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
